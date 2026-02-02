@@ -9,20 +9,9 @@
 
 /* START EDITABLE VARIABLES -----------------------------------------------------------------------------------------------------------------*/
 
-
-/* this changes all svg icons to their older verisons. remove it to change to the defualt icons */
-@import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css); 
-
 :root,
 .theme-dark, .theme-light {
 
-
-
-
-
-
-
-  
 
   --badge-notification-background: var(--cursedcord-scolor);
 
