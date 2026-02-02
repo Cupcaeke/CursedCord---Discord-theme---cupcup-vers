@@ -1,0 +1,1150 @@
+/**
+ * @name CursedCord
+ * @author CursedElectric
+ * @description A sharp theme that removes nitro features/buttons and rounded edges
+ * @version 0.1
+ */
+
+
+
+/* START EDITABLE VARIABLES -----------------------------------------------------------------------------------------------------------------*/
+
+
+/* this changes all svg icons to their older verisons. remove it to change to the defualt icons */
+@import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css); 
+
+
+:root,
+.theme-dark, .theme-light { /*adding theme-light here becasue discord nitro users can change their profile themes to light for some reason */ 
+  --cursedcord-border:rgba(95, 95, 95, 0.39);
+
+  --cursedcord-mcolor: rgb(27, 30, 39); /* main accent color*/
+  --cursedcord-bg1: rgb(3, 3, 3); /*keep darker */
+  --cursedcord-bg2: rgb(7, 8, 8); /*keep ligther */
+
+  /*keeping these all the same color with their respective opacities results in a easy and good color combo */
+  --cursedcord-linkcolor:rgb(96, 106, 138); /*color of links */
+  --cursedcord-mcolor-highlight-hover: rgba(96, 106, 138, 0.25); /* hover color 2. should be darker than highlight. set alpha to 0.25 */
+  --cursedcord-mcolor-highlight: rgba(96, 106, 138, 0.15); /* hover color. should be lighter but similar to mcolor. set alpha to 0.15 */
+
+  --cursedcord-scolor: rgb(255, 255, 255); /*color for all red notif icons*/
+  --cursedcord-notiftext: rgb(0, 0, 0); /*text color for notif icons*/
+
+  --home-icon: url(https://img.pokemondb.net/sprites/black-white/anim/shiny/giratina-origin.gif); /*icon used at the top left where discord symbol was. change to anything you like! */
+
+  /* NITRO TOGGLES - leave var blank to show, and "none" to hide*/
+  /* name, pfp background, avatar banners etc */
+  --cursedcord-decorations: none;
+  /*shop button */
+  --cursedcord-shoptoggle: none;
+  /*quests button */
+  --cursedcord-questtoggle: none;
+  /*nitro + gift button */
+  --cursedcord-nitrotoggle: none;
+
+  /*app launcher on message bar*/
+  --cursedcord-appbutton: none;
+  /*sticker button on message bar*/
+  --cursedcord-stickerbutton: none;
+  /*END EDITABLE VARS ---------------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  --badge-notification-background: var(--cursedcord-scolor);
+
+  --interactive-background-hover:rgba(255, 255, 255, 0.1); /*mabbe keep these uneditable - selection hover colors */
+  --interactive-background-selected:rgba(255, 255, 255, 0.1);
+
+  --watermark-filter-invert: 0%;
+  --watermark-filter-sepia: 50%;
+  --watermark-filter-saturate: 3000%;
+  --watermark-filter-hue-rotate: 210deg;
+  --watermark-filter-brightness: 70%;
+  --watermark-filter-contrast: 200%;
+
+  --profile-gradient-secondary-color:var(--cursedcord-bg2)!important;
+  --profile-gradient-primary-color:var(--cursedcord-bg1)!important;
+  --profile-gradient-overlay-color:var(--cursedcord-bg1)!important;
+
+  /*change message mentioned bg when right clicked */
+  --message-mentioned-background-hover:var(--cursedcord-mcolor-highlight-hover);
+
+  /*Remove rounded edges on EVERYTHING*/
+  --radius-none: 0px; 
+  --radius-xs: 0px; 
+  --radius-sm: 0px; 
+  --radius-md: 0px; 
+  --radius-lg: 0px; 
+  --radius-xl: 0px; 
+  --radius-xxl: 0px; 
+  --radius-round: 0px;
+  --custom-base-tile-border-radius:0px;
+  
+
+  --custom-user-profile-theme-padding: 0px!important;
+
+  /*changing colors of sliders and buttons*/
+  --bd-brand: var(--cursedcord-mcolor);
+  --bd-brand-hover: var(--cursedcord-mcolor);
+  --bd-brand-active: var(--cursedcord-mcolor);
+  --background-brand: var(--cursedcord-mcolor);
+  --control-primary-background-default: var(--cursedcord-mcolor);
+  --control-primary-background-default: var(--cursedcord-mcolor);
+
+  --control-primary-background-active: var(--cursedcord-scolor);
+  --control-primary-background-active: var(--cursedcord-scolor);
+  --control-primary-background-hover: var(--cursedcord-scolor);
+  --control-primary-border-hover: var(--cursedcord-scolor);
+
+  --radio-background-selected-default: var(--cursedcord-mcolor);
+  --radio-background-selected-hover: var(--cursedcord-scolor);
+
+  --checkbox-background-selected-default:var(--cursedcord-mcolor);
+  --checkbox-background-selected-hover: var(--cursedcord-scolor);
+
+
+ /* bacgkround shit --------------------------------------- */
+
+  /*changes pfp and embed bg along with other things*/ 
+  --background-surface-high: var(--cursedcord-bg1)!important;
+  /*main area color*/
+  --background-base-lower:var(--cursedcord-bg1)!important;
+  --background-base-low:var(--cursedcord-bg1)!important;
+
+  /*pfp colors -- keep them similar*/
+  --user-profile-overlay-background:var(--cursedcord-bg2)!important;
+  --background-surface-highest:var(--cursedcord-bg2)!important;
+  --opacity-white-12:var(--cursedcord-bg2)!important;
+
+  /* message bar */
+  --chat-background-default:var(--cursedcord-bg2)!important;
+  
+  --background-base-lowest:var(--cursedcord-bg2)!important;
+
+ /* end -------------------------------------------------------*/
+
+  /*these 2 change color of all links / link icons */
+  --text-link:var(--cursedcord-linkcolor);
+  --icon-link:var(--cursedcord-linkcolor); /*maybve give these 2 seperate colorings? in base discord they were slightly darker than the normal blue */
+
+  --text-brand: var(--cursedcord-mcolor);
+
+
+  --background-feedback-notification: var(--cursedcord-scolor); 
+  --text-overlay-light: rgb(0, 0, 0);/* controls text color on notifs i think
+
+  /* change border color */
+  --border-feedback-critical: var(--cursedcord-border);
+  --border-focus:  var(--cursedcord-border);
+  --border-muted:  var(--cursedcord-border);
+  --border-normal:  var(--cursedcord-border);
+  --border-strong:  var(--cursedcord-border);
+  --border-subtle: var(--cursedcord-border);
+
+  /*changing text colors - organized in order of brightest to darkest based on discords default coloring*/
+  --text-strong:rgb(255, 255, 255); 
+  --text-default:rgb(255, 255, 255);
+  --interactive-text-default: color-mix(in oklab, var(--text-strong) 70%, rgba(0,0,0,1) 30%)!important;
+
+
+}
+* {
+  border-radius:0px !important;
+} 
+
+
+/*border-feedback-critical:  color-mix(in oklab, hsl(var(--opacity-red-20-hsl) / 0.2) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.2) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+--border-focus:  color-mix(in oklab, var(--blue-new-30) 100%, var(--custom-theme-base-color, #000) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+--border-muted:  color-mix(in oklab, hsl(var(--opacity-4-hsl) / 0.0392156862745098) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.0392156862745098) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+--border-normal:  color-mix(in oklab, hsl(var(--opacity-20-hsl) / 0.2) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.2) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+--border-strong:  color-mix(in oklab, hsl(var(--opacity-44-hsl) / 0.4392156862745098) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.4392156862745098) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%)));
+--border-subtle:  color-mix(in oklab, hsl(var(--opacity-12-hsl) / 0.12156862745098039) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.12156862745098039) var(--custom-theme-border-color-amount, var(--custom-theme-base-color-amount, 0%))); */
+
+
+
+
+
+ /* todo list
+ -fix server boost expanding / chanigng colors when hovered
+ -fix white bar appearing randomly between channels
+ -follow discord orignal bg scheme maybe?
+ -change switches from flashing blue when toggling
+ -find something to do with the top of servers list 
+ -fix new notifs
+ -unify highlight color everywhere
+ -fix home icon appaering behind gcs with no pfp when they have unread messages
+ -add hover color to server name !!! server name does not have hover color by default. this is hard to fix
+*/
+
+
+
+
+
+
+/*removing borders from pfp at the top where name is in dms*/
+._44b0c28be7879b7b-mask foreignObject,
+._44b0c28be7879b7b-svg foreignObject {
+  display:hidden;
+  mask:none;
+}
+
+
+/*changes text color on notif popups*/
+.numberBadge__2b1f5{
+  color:var(--cursedcord-notiftext)!important;
+}
+
+/*making find or start conversation one pixel taller*/
+.searchBar_e6b769  {
+  height: calc(var(--custom-channel-header-height) + 1px);
+}
+/*--------------------------------------- FOR SWITCHES -------------------------------- */
+.switchIndicator_a28278[style="opacity: 1; background-color: rgb(88, 101, 242); border: 1px solid rgba(151, 151, 159, 0.2);"]{
+  background-color: var(--cursedcord-mcolor)!important;
+}
+
+.switchIndicator_a28278:hover{
+  background-color: var(--cursedcord-scolor)!important;
+}
+
+.switchIndicator_a28278.input:checked{
+  background-color: rgba(0,0,0,0.12)!important;
+}
+
+.thumb_a28278 {
+  background-color: white;
+}
+
+/*--------------------------------------------------------------------*/
+
+/*home icon */
+.childWrapper__6e9f8:first-of-type,
+.childWrapperNoHoverBg__6e9f8:first-of-type {
+  background: var(--home-icon) center/cover no-repeat !important;
+}
+
+/* gets rid of discord logo in top left */
+.childWrapperNoHoverBg__6e9f8 svg {
+  display:none;
+}
+
+._6e9f8dce4cc18de3-wrapper[data-list-item-id="guildsnav___home"] ._6e9f8dce4cc18de3-childWrapper svg {
+  display: none;
+}
+.dfb989b3f435152a-innerContainer,
+.dfb989b3f435152a-solid{
+  --custom-display-name-styles-main-color: none;
+  --custom-display-name-styles-light-1-color: none;
+  --custom-display-name-styles-light-2-color: none;
+  --custom-display-name-styles-dark-1-color: none;
+  --custom-display-name-styles-dark-2-color: none;
+  --custom-display-name-styles-toon-stroke-color: none;
+  --custom-display-name-styles-neon-stroke-color: none;
+  --custom-display-name-styles-wrap: nowrap;
+  --custom-display-name-styles-font-opacity: 1;
+}
+
+
+/*removes rounded edges on dm highlight - not controlled by root radius */
+.e45859d60799ad7c-container {
+  border-radius:0px!important;
+}
+/*---------------------------- for message bar --------------------------*/
+.scrollerSpacer__36d07 {
+  height:20px;
+}
+.form_f75fb0,
+.formWithLoadedChatInput_f75fb0  {
+  padding:0px;
+  margin:0px;
+  border:none!important;
+  outline:none!important;
+}
+
+.channelTextArea__74017 {
+  border:none!important;
+  outline:none!important;
+  border-top:1px solid var(--cursedcord-border)!important;
+}
+.inlineContainer__74017 {
+  border-top:none!important;
+}
+.channelTextArea_f75fb0 {
+  margin-bottom: 0px!important;
+}
+/*----------------------------------------*/
+.sidebarList__5e434 {
+  border-top:none;
+  border-left:none;
+}
+
+/*remvong left margin on channels*/
+.iconVisibility_c69b6d,
+.wrapper__2ea32,
+.selectedChannel_c69b6d,
+.modeSelected__2ea32 {
+  margin:0px!important;
+}
+
+/*mentions color on the left side*/
+.mentioned__5126c:before {
+  background: var(--cursedcord-mcolor);
+}
+
+/*mentions color*/
+.mentioned__5126c {
+  background: var(--cursedcord-mcolor-highlight);
+}
+
+/*mentions color when hovered*/
+.mouse-mode.full-motion,
+.message__5126c.mentioned__5126c:hover  {
+  background: var(--cursedcord-mcolor-highlight-hover)!important;
+}
+
+/*new message line that shows in text channels above all the unread messages so far */
+.endCap__908e2 {
+  color:var(--cursedcord-notiftext)!important;
+}
+
+.ro{
+  size:1px;
+}
+
+.b52e4f70d11a5ca2-gameIcon{
+  overflow: visible !important;
+  border-radius: 0px !important;
+}
+/*remove rounded border from ping graphic */
+._06d6249a1f2584ac-largePing {
+  border-radius: 0px !important;
+}
+
+/*remove rounded borders from bottom left widgets facecam / stream / activity / soundboard selector */
+._201d5e8a3c09670a-grow{
+  border-radius: 0px !important;
+  padding: 0px!important;
+}
+
+.container > ._44b0c28be7879b7b-wrapper:nth-child(2) svg {
+  display: none;
+}
+
+/*move hastag on text channels slightly over */
+.iconContainer__2ea32 {
+  margin-left:7px;
+}
+
+
+/*for notif button thing blip thingamijig on servers list*/
+.pill_e5445c,
+.wrapper__58105 {
+  width:16px;
+}
+.pill_e5445c * {
+  width: 4px;
+  border-radius: 0px;
+  background-color: var(--cursedcord-scolor);
+  background-repeat: no-repeat;
+  margin-left: 0px;
+  left:0px;
+  margin-top: 0px; 
+  /* mask-repeat:repeat;
+  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png");
+  mask-size: 200px 90px;
+  mask-position: 0px -23px; */
+}
+
+/*text channel new notif button thing blip thingamajig */
+.unread__2ea32,
+.unreadImportant__2ea32{
+  width: 20px;
+  height: 30px;
+  border-radius: 0px;
+  background-color: var(--cursedcord-scolor);
+  background-repeat: no-repeat;
+  margin-left: -0px;
+  left:0px;
+  margin-top: -20px;
+  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png");
+  mask-size: 200px 40px;
+  mask-repeat: no-repeat;
+}
+
+
+/*channel group background*/
+.mainContent__29444::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--cursedcord-mcolor);
+  mask-repeat: no-repeat;
+  mask-image: url("https://i.postimg.cc/mgHR5ghq/channel-border.png");
+  mask-size: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 10px) 50px;
+  mask-position: 0px,0px;
+  margin-top: 0px;
+  height: 25px;
+  z-index: -2;
+}
+
+/* top bar bg */
+.bar_c38106{
+  background-color: var(--cursedcord-mcolor);
+}
+
+.itemsContainer_ef3116 {
+  background-color: var(--cursedcord-mcolor);
+}
+
+/* NOTIFICATIONS AT TOP OF SCREEN*/
+._6e2b9359c6f84cfd-notice {
+  border-radius: 0px!important;
+}
+
+/*backgrounds*/
+.ef3116c2da186559-wrapper{
+    background-color: var(--cursedcord-mcolor);
+}
+/*----------------------SERVER CHANNELS COLUMN---------------------------*/
+
+/*server banner*/
+.animatedContainer_f37cb1{
+  top:48px;
+}
+
+/* remove border from server name bg on servers specifically with banners */
+.bannerVisible_f37cb1,
+.header_f37cb1 {
+  border-top:none!important;
+}
+/*server name bg */
+.header_f37cb1::before {
+  content: "";
+  position: absolute;
+  inset: 0; /* for some reason these 3 things make it work */
+  top:0; /*religns mask on servers with a banner*/
+
+  background-color: var(--cursedcord-mcolor);
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
+  -webkit-mask-size: 1000px 130px;
+  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px);
+
+  pointer-events: none;
+}
+
+
+.header_f37cb1 {
+  border-bottom: none;
+}
+
+/*removing padding from server name + icons */
+.f37cb1984c371ee5-header {
+  padding: 0px!important;
+}
+
+/*adding buffer for servers with banner */
+.hasBanner_f37cb1,
+.bannerVisible_f37cb1 {
+  margin-bottom:50px;
+}
+
+/*controls arrow dropdown on server name */
+.f37cb1984c371ee5-headerChildren{
+  right:30px;
+}
+
+/*server name button*/
+.f37cb1984c371ee5-guildDropdown {
+  border-radius: 0px;
+  height: 45px;
+  width: 365px;
+  margin: 0px;
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
+  -webkit-mask-size: 1000px 130px;
+  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px);
+}
+
+/*removing margins off something */
+.f37cb1984c371ee5-header,
+.f37cb1984c371ee5-headerContent {
+  margin:0px!important;
+  left:0px;
+}
+
+/*moves invite to server */
+.inviteButton_f37cb1{
+  position:absolute;
+  right: -21px;
+  margin-top: -20px;
+  -webkit-mask-image: url("https://i.postimg.cc/JzmKmMrB/server-invite-button-mask.png");
+  -webkit-mask-size: 47px 43px;
+  -webkit-mask-position: 0px 0px;
+  mask-repeat: no-repeat;
+  width: 70px;
+  height:50px;
+  overflow:hidden;
+}
+
+.f37cb1984c371ee5-inviteButton svg{
+  transform: translate(5px,5px);
+}
+
+
+/*---------------------------------server boost bar---------------------------------------------*/
+/*getting rid of right margin on text channel scroller */
+.d125d22cdfd32cfe-fade,
+.d125d22cdfd32cfe-content {
+  padding:0px;
+  margin:0px;
+}
+
+/*boost goal container */
+.container__0d0f9m,
+.containerWithMargin__0d0f9{
+  padding: 0px;
+  margin:0px;
+  padding-top: 0px;
+  top:-15px;
+  border: none;
+  height: 10px;
+}
+.progressContainer__0d0f9{
+  background-color: var(--cursedcord-scolor);
+  border-bottom: 1px solid var(--cursedcord-border);
+}
+.full-motion,
+.progressContainer__0d0f9{
+  transition:none!important;
+}
+/*remove gradient on hover */
+.progress__0d0f9:hover{
+  background: linear-gradient(270deg, var(--cursedcord-border), var(--cursedcord-border))!important;
+  transition:none!important;
+}
+
+.container__0d0f9{
+  border-top: 0px;
+  border-bottom: 0px;
+  border:none;
+}
+.contentContainer__0d0f9:focus-visible,
+.progressContainer__0d0f9:focus-visible{
+  outline:none!important;
+}
+/*remove shit getting bigger on hover */
+.full-motion,
+.progressContainer__0d0f9{
+  transition:none;
+}
+/*remove shit getting bigger on hover */
+.contentContainer__0d0f9:hover,
+.progressContainer__0d0f9:after,
+.contentContainer__0d0f9:after{
+  transform:none!important;
+}
+
+.full-motion,
+.progressContainer__0d0f9 {
+  transform: none!important;
+}
+/*progress container for server boost bar */
+.progressContainer__0d0f9{
+  border-radius: 0px;
+  background-color: none;
+  background: none;
+  padding: 0px;
+  margin:0px;
+  height: 10px;
+}
+
+/*progress bar boost goal */
+.progress__0d0f9{
+  background:none;
+  background-color: var(--cursedcord-mcolor);
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
+  -webkit-mask-size: 1000px 1000px;
+  height: 11px;
+  left:-1px;
+  top:0px;
+}
+
+.textContainer__0d0f9{
+  display:none;
+}
+/*--------------------------------------------------------------------------------*/
+
+
+
+foreignObject[x="0"][width="20"][height="20"][mask]{
+  mask:none;
+}
+/* removes rounded edges on pip stream */
+._2b2f1bb918566c48-elevationHigh{
+  border-radius: 0 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  mask: none !important;
+}
+
+
+/*moving channel selection bg over to the left*/
+._2ea32c412048f708-link{
+  left:-8px;
+  padding-left:20px;
+  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 1px);
+}
+
+/*current hovering channel*/
+.c69b6db0641110f6-selected{
+  border-radius: 0 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  mask: none !important;
+}
+
+/*removes rounded edges off channel hovering */ 
+._2ea32c412048f708-link,
+._07f9193042954787-content{
+  border-radius: 0 !important;
+  overflow: visible !important;
+  clip-path: none !important;
+  mask: none !important;
+}
+
+._5e434347c823b592-content{
+    background-color: var(--cursedcord-bg1);
+}
+
+
+/*ring x to general dms popup*/
+.a53846f6e9583cbd-chatHeaderBar{
+  background: none!important;
+  background-color: var(--cursedcord-bg2)!important;
+  border-bottom:1px solid var(--cursedcord-border);
+}
+/*ring x to general container*/
+.a53846f6e9583cbd-chatHeaderBar:after {
+  box-shadow: 0px!important;
+  height: 0px!important;
+}
+
+._9293f6b2fc12398a-container{
+  background-color: var(--cursedcord-bg2)!important;
+}
+
+/*border for message box */
+.f75fb00fb7356cbe-channelBottomBarArea {
+  outline: solid var(--cursedcord-border) thin !important;
+}
+
+/*squares up message box */
+.f75fb00fb7356cbe-form {
+  padding-inline:0px !important;
+}
+
+._740174f3d6a2c8fe-scrollableContainer,
+._740174f3d6a2c8fe-themedBackground{
+  border-radius: 0px;
+}
+
+._5e434347c823b592-container{
+  --custom-chat-input-margin-bottom:none;
+}
+
+/*remove border off message box */
+._740174f3d6a2c8fe-channelTextArea {
+  border:none !important;
+}
+
+/*person is typing ... message at the bottom of screen. removed becasue i couldnt fix it and it looks kinda ugly*/
+.chatGradient__36d07,
+.chatGradientBase__36d07 {
+  display:none;
+}
+
+
+
+
+
+
+/*removing rounded edges and adding border to user pfp */
+.c19a557985eb7793-avatar {
+  border-radius: 0px;
+  background-color: var(--cursedcord-mcolor);
+  outline: solid var(--cursedcord-bg2) 2px !important;
+}
+/* targets server icon makes. makes servers square*/
+foreignObject[width="40"][height="40"],
+foreignObject[width="32"][height="32"]{
+  mask:none!important;
+}
+
+
+
+
+
+/*------------------------top bar --------------------------------------*/
+
+/* removes inbox from top bar */
+.clickable_c99c29{
+  display:none;
+}
+
+/*removes help from top bar */
+
+
+/* --------------------------------------------------------------*/
+
+/* oops i forgot */
+._4bbc6dc06e75ad52-videoContainer {
+  display:none;
+}
+
+/*removing quests from dms list */
+.wrapper__553bf{
+  display: var(--cursedcord-questtoggle);
+}
+
+
+/*--------------------------------------------------nitro features---------------------------------------*/
+
+.custom-user-profile-theme,
+.inner_c0bea0
+{
+  border-left:1px solid var(--cursedcord-border);
+}
+
+.upsellRibbonContainer_a55fdc {
+  display:none;
+}
+
+/*removes nitro banner bg*/
+.container__4bbc6{
+  display: var(--cursedcord-decorations);
+}
+
+/* removes avatar decoration */
+._44b0c28be7879b7b-avatarDecoration,
+.c19a557985eb7793-avatarDecoration,
+[class*="avatarDecoration"],
+[class*="profileEffects"] {
+  display: var(--cursedcord-decorations);
+}
+
+/* gets rid of nameplate backgrounds */
+._4bbc6dc06e75ad52-container{
+  display: var(--cursedcord-decorations);
+}
+
+/*profile background startup animation */
+._0137000bc80ab6ea-inner{
+  display: var(--cursedcord-decorations);
+}
+
+/* removes profile border animation */
+._4bbc6dc06e75ad52-videoContainer {
+  display: var(--cursedcord-decorations);
+}
+
+/*removing nitro gift from message box -- BROKEN -- NEED TO FIX*/
+.button__74017[aria-label="Send a gift"] {
+  display:var(--cursedcord-nitrotoggle);
+}
+/*remove sticker button from message box*/
+.stickerButton__74017{
+  display: var(--cursedcord-stickerbutton);
+}
+
+/*remove app launcher button from message box*/
+.buttonContainer_e6e74f{
+  display: var(--cursedcord-appbutton);
+}
+
+/*remobing nitro and shop from dms list */
+li:has(a[data-list-item-id$="___nitro"]){
+  display: var(--cursedcord-nitrotoggle);
+}
+a[data-list-item-id$="___shop"] {
+  display: var(--cursedcord-shoptoggle);
+}
+
+/* ----------------------------------------------------------------------------------*/
+/*bg of "message user" in pfp popout*/
+.container_a99829{
+  background-color: var(--cursedcord-bg2);
+}
+/*buncha borders shit */
+.c8ffbb79449f399c-container,
+.e6b7699ce8339e1c-searchBar,
+._9293f6b2fc12398a-container,
+._7641b507c6cdbb10-container{
+  outline: solid var(--cursedcord-border) thin !important;
+  border-start-start-radius: 0px;
+  border-radius: 0px!important;
+}
+
+._5e434347c823b592-sidebarList{
+    border:none!important;
+}
+._2637a2609f343032-container{
+    border:none!important;
+}
+
+._37e49614b9f110a9-container,
+._37e49614b9f110a9-containerRtcOpened{
+  border:none!important;
+  outline: solid var(--cursedcord-border) thin !important;
+  border-radius: 0px;
+}
+
+.e6b7699ce8339e1c-searchBar{
+  height:49px;
+}
+
+/*voice connected bottom left container */
+.e131a99484292a19-container{
+  border-radius: 0px;
+}
+
+._5126c0cd07f243a0-buttons,
+._040f07d21e1fb0d6-container,
+._5126c0cd07f243a0-buttonsInner,
+.f84418acfdbdfe54-popover,
+.f7ecaca5c80dbf3a-wrapper {
+  border-radius: 0px!important;
+}
+
+
+/*recovering padding on pfp popup*/
+._5be3ef42f92174b2-body {
+  padding: 4px 16px 8px !important;
+}
+
+/*removing embed rounded corners*/
+.af017ab847f75d02-imageWrapper,
+._0f481cbbd7530492-imageContainer,
+.f4758a8d6346d18b-oneByOneGrid,
+.f4758a8d6346d18b-oneByOneGridSingle,
+.f4758a8d6346d18b-visualMediaItemContainer,
+._6c706db0523bd9a7-mosaicItemMediaMosaic,
+._623de82e76ad7f82-embed,
+._623de82e76ad7f82-embedImage,
+._623de82e76ad7f82-embedImage img,
+._623de82e76ad7f82-embedImage video,
+._623de82e76ad7f82-embedThumbnail img,
+._623de82e76ad7f82-embedThumbnail video,
+._623de82e76ad7f82-embedVideo img,
+._623de82e76ad7f82-embedVideo video {
+  border-radius: 0px!important;
+}
+
+/*message column border */
+.f75fb00fb7356cbe-chatContent{
+  border-right: 1px solid var(--cursedcord-border) !important;
+}
+
+/*unsure */
+._5e434347c823b592-content{
+  border: 0px!important;
+}
+
+
+/*gives bottom left panels borders */
+._5dec784a68542d60-panel,
+._5e434347c823b592-activityPanel,
+.e131a99484292a19-wrapper {
+  border-radius: 0px;
+  border: 0px!important;
+  border-top: 1px solid var(--cursedcord-border) !important;
+  overflow: visible;
+}
+
+/*controls bottom left panels */
+.panels__5e434 {
+  border-radius: 0px;
+  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + var(--custom-guild-list-width) + 5px);
+  left:-1%;
+  bottom:0px;
+  border:none!important;
+}
+
+.visual-refresh,
+._5e434347c823b592-sidebar::after {
+  height:56px !important;
+}
+
+/* popup profile ---------------------------------------------------------------------------------------*/
+/*unsure*/
+
+/*Getting rid of bounding box for user status indicator */
+._44b0c28be7879b7b-svg {
+  contain:none;
+}
+.outer_ab8609:after,
+.outer_ab8609:before{
+  display:none;
+}
+
+/*porfile popup bg
+._59d0d7075b521375-layer {
+  background-color:var(--cursedcord-bg2);
+  outline: solid var(--cursedcord-border) thin;
+} THIS METHOD DOES NOT WORK/*
+
+._44b0c28be7879b7b-avatarStack,
+._75742e4cc9019aeb-overlay {
+}
+/*filling in hole on profile banner*/
+mask circle[r="46"] {
+  fill: white !important;
+}
+
+/*remove rounding on pfp */
+._44b0c28be7879b7b-avatar,
+._44b0c28be7879b7b-avatarBorder{
+  border-radius:0px!important;
+}
+
+/* --------------------------------USER STATUS INDICATOR*--------------------------------*/
+
+
+.mask_a423bd {
+  display: none;
+}
+
+rect[fill="black"][height="36"][width="28"]{
+  display:none; 
+}
+/*move position of online / dnd/ away circle*/
+g rect[width="16"][height="16"][x="60"] {
+  mask:none!important;
+    width: 24px;
+    height:24px;
+}
+
+._44b0c28be7879b7b-pointerEvents{
+  border:none;
+  outline:none;
+}
+
+g rect[width="16"][height="24"][x="60"]{
+      mask:none!important;
+    width: 24px;
+    height:24px;
+    transform:translate(0px,8px);
+}
+
+svg[width="40"][height="24"][viewbox="0 0 40 24"]{
+    transform:translate(12px, 8px);
+}
+
+g rect[width="12"][height="12"][x="28"][mask][class]{
+  mask:none;
+  transform: translate(-7px,-7px) scale(1.2,1.2);
+}
+
+g rect[width="12"][height="18"][x="28"][y="22"][mask][class]{
+  mask:none;
+  transform:translate(2px,2px) scale(0.97,0.97);
+}
+/*removing masks off status indicators */
+svg[width="25"][height="15"] [id] {
+  display:none;
+}
+
+rect[width="25"][height="15"] {
+    height:15px;
+    width: 15px;
+    transform: translate(3px, 1px);
+    stroke: var(--cursedcord-border) !important;
+  stroke-width: 1px;
+}
+rect[width="40"][height="24"][mask] {
+  mask:none;
+}
+
+g rect[width="10"][height="10"][x="22"][mask] {
+    height:15px;
+    width: 15px;
+    transform: translate(-5px, -5px);
+  stroke: var(--cursedcord-border) !important;
+  stroke-width: 1px;
+  mask:none;
+}
+rect[width="10"][height="15"][x="22"][y="17"] {
+  stroke-width: 0px!important;
+}
+circle[fill="black"][cx="68"],
+circle[fill="white"][cx="68"],
+circle[fill="black"][cx="92"][cy="140"],
+circle[fill="black"][r="10"][cx="34"],
+rect[fill="black"][height="26"][width="20"],
+circle[fill="black"][r="20"][cy="100"]{
+    display:none!important;
+}
+rect[width="10"][height="15"][x="22"] {
+    height:15px;
+    width: 15px;
+    transform: translate(-5px, -0px);
+    stroke: var(--cursedcord-border) !important;
+  stroke-width: 1px;
+  mask:none!important;
+}
+
+g rect[width="24"][height="24"][x="88"][y="88"][mask][class]{
+  mask:none;
+  transform: translate(12px,12px);
+}
+
+._44b0c28be7879b7b-cursorDefault{
+    mask-image: url("https://i.postimg.cc/QMmGCkHZ/right-triangle-for-status-indicator.png")
+}
+._44b0c28be7879b7b-wrapper g rect[width="10"][height="10"][x="22"][fill="transparent"] {
+    transform: translate(-20px, -20px);
+}
+
+/*triangle mask for some status indicators*/
+.mask__44b0c g{
+    mask-image: url("https://i.postimg.cc/QMmGCkHZ/right-triangle-for-status-indicator.png");
+    mask-repeat: no-repeat;
+}
+
+/*unrounds mask for pfpf*/
+foreignObject[x="0"][width="80"]{
+  mask:none;
+  left:-100px;
+}
+
+foreignObject[x="0"][width="120"][mask]{
+  mask:none;
+}
+
+._44b0c28be7879b7b-wrapper {
+  border-radius: 0px;
+}
+
+._44b0c28be7879b7b-svg foreignObject[x="0"][width="120"][mask]{
+  mask:none;
+}
+
+/*------------------------------------------*/
+
+.aa8da23faa27393c-top{
+  padding-left: 20px;
+}
+
+._9c3bea41fd465666-profileBody {
+  padding-left:10px;
+}
+
+.f37cb1984c371ee5-name {
+  padding-right:30px;
+}
+
+/*removing folder rounded edges*/
+.cc5dd25190031396-svg mask,
+.cc5dd25190031396-svg path[d="M0 24C0 16.5449 0 12.8174 1.21793 9.87706C2.84183 5.95662 5.95662 2.84183 9.87706 1.21793C12.8174 0 16.5449 0 24 0C31.4551 0 35.1826 0 38.1229 1.21793C42.0434 2.84183 45.1582 5.95662 46.7821 9.87706C48 12.8174 48 16.5449 48 24C48 31.4551 48 35.1826 46.7821 38.1229C45.1582 42.0434 42.0434 45.1582 38.1229 46.7821C35.1826 48 31.4551 48 24 48C16.5449 48 12.8174 48 9.87706 46.7821C5.95662 45.1582 2.84183 42.0434 1.21793 38.1229C0 35.1826 0 31.4551 0 24Z"]{
+  mask:none;
+  display:none;
+}
+
+/*removing rounded corners from servers in folder preview*/
+.f34534e8a5d3ca64-iconInactive,
+._48112cbe77dc5022-folderPreviewGuildIcon{
+  border-radius: 0px!important;
+}
+
+.refresh-active-now ._00943886e1cf89d1-wrapper,
+.ac6414b5135b4791-inner{
+  border-radius: 0px!important;
+}
+
+/* -------------------------------------------------------------- NEW UNREADS indicator -------------------------------------------------*/
+
+/*changes "new" status on the top of the servers list when you have notifs above where you need to scroll*/
+._3b95d7d910416e54-active{
+  border-radius: 0 !important;
+  border: 1px solid var(--cursedcord-border);
+  overflow: visible !important;
+  clip-path: none !important;
+  mask: none !important;
+  background-color: var(--cursedcord-scolor);
+}
+
+._629e4c86564a4ee7-unreadBottom {
+  bottom: calc(var(--custom-app-panels-height, 0) + var(--space-0));
+}
+
+.unreadMentionsIndicatorTop_ef3116{
+  top:-10px;
+  border:none;
+}
+
+/*flips bottom "new" notif indicator and repositions slightly*/
+.ef3116c2da186559-unreadMentionsIndicatorBottom{
+  margin-bottom:8px;
+}
+
+/* controls new unreads notif on server channel messages column*/
+._7aaec78b97ff00f7-top {
+  top:-1px;
+}
+
+._7aaec78b97ff00f7-bottom {
+  bottom:calc(var(--custom-app-panels-height, 0) - 10px);
+}
+
+._7aaec78b97ff00f7-bar{
+  background-color: var(--cursedcord-indicatorcolor);
+}
+._7aaec78b97ff00f7-barText,
+.cf48127484dbde85-text-xs{ /*this text-xs might change other elements*/
+  color: var(--cursedcord-indicatorcolor)!important;
+  filter:invert(1);
+}
+
+/*remove padding off new notif indicators*/
+._3b95d7d910416e54-container,
+.ef3116c2da186559-unreadMentionsIndicatorBottom, 
+.ef3116c2da186559-unreadMentionsIndicatorTop {
+  padding:0px!important;
+}
+
+/*swaps text on new notif indicator -- DEPRECATED I THINK*/
+._3b95d7d910416e54-text {
+  color:var(--cursedcord-notiftext)!important;
+}
+
+/*swaps text on new notif indicator*/
+.mention__3b95d {
+  color:var(--cursedcord-notiftext)!important;
+}
+
+._3b95d7d910416e54-container,
+._7aaec78b97ff00f7-container {
+  justify-content: left!important;
+  width: 120px!important;
+}
+
+/*LARGE NOTIF BAR*/
+_629e4c86564a4ee7-unreadTop _629e4c86564a4ee7-unread _3b95d7d910416e54-container
+_629e4c86564a4ee7-unreadBottom _629e4c86564a4ee7-unread _3b95d7d910416e54-container
+
+/*SMALL NOTIF BAR*/
+_7aaec78b97ff00f7-container _7aaec78b97ff00f7-bottom
+_7aaec78b97ff00f7-container _7aaec78b97ff00f7-top
