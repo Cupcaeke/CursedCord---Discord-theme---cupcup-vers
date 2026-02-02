@@ -13,49 +13,8 @@
 /* this changes all svg icons to their older verisons. remove it to change to the defualt icons */
 @import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css); 
 
-
 :root,
-.theme-dark, .theme-light { /*adding theme-light here becasue discord nitro users can change their profile themes to light for some reason */ 
-  --cursedcord-border:rgba(95, 95, 95, 0.39);
-
-  --cursedcord-mcolor: rgb(27, 30, 39); /* main accent color*/
-  --cursedcord-bg1: rgb(3, 3, 3); /*keep darker */
-  --cursedcord-bg2: rgb(7, 8, 8); /*keep ligther */
-
-  /*keeping these all the same color with their respective opacities results in a easy and good color combo */
-  --cursedcord-linkcolor:rgb(96, 106, 138); /*color of links */
-  --cursedcord-mcolor-highlight-hover: rgba(96, 106, 138, 0.25); /* hover color 2. should be darker than highlight. set alpha to 0.25 */
-  --cursedcord-mcolor-highlight: rgba(96, 106, 138, 0.15); /* hover color. should be lighter but similar to mcolor. set alpha to 0.15 */
-
-  --cursedcord-scolor: rgb(255, 255, 255); /*color for all red notif icons*/
-  --cursedcord-notiftext: rgb(0, 0, 0); /*text color for notif icons*/
-
-  --home-icon: url(https://img.pokemondb.net/sprites/black-white/anim/shiny/giratina-origin.gif); /*icon used at the top left where discord symbol was. change to anything you like! */
-
-  /* NITRO TOGGLES - leave var blank to show, and "none" to hide*/
-  /* name, pfp background, avatar banners etc */
-  --cursedcord-decorations: none;
-  /*shop button */
-  --cursedcord-shoptoggle: none;
-  /*quests button */
-  --cursedcord-questtoggle: none;
-  /*nitro + gift button */
-  --cursedcord-nitrotoggle: none;
-
-  /*app launcher on message bar*/
-  --cursedcord-appbutton: none;
-  /*sticker button on message bar*/
-  --cursedcord-stickerbutton: none;
-  /*END EDITABLE VARS ---------------------------------------------------------------------------------------------------------------------------*/
-
-
-
-
-
-
-
-
-
+.theme-dark, .theme-light {
 
 
 
