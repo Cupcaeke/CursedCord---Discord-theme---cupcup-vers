@@ -1,22 +1,66 @@
 /**
- * @name CursedCord
+ * @name CursedCordWIP
  * @author CursedElectric
  * @description A sharp theme that removes nitro features/buttons and rounded edges
- * @version 0.1
+ * @version 1.0
  */
 
 
+/*reverts discord icons to old style. remove this link to change to default icons */
+/*@import url(https://davart154.github.io/Themes/Icon%20Revert%202023/2023%20Icon%20Revert.css); /*the gif icon for this is broken */
 
-/* START EDITABLE VARIABLES -----------------------------------------------------------------------------------------------------------------*/
 
 :root,
-.theme-dark, .theme-light {
+.theme-dark, .theme-light { 
+  /*role colors - uncomment to show, keep commmented out to hide*/
+  /* --cursedcord-server-role-colors:unset; CURRENTLY BROKEN*/
 
 
-  --badge-notification-background: var(--cursedcord-scolor);
+  /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
+  /*rebalance colors idk how yet -- these are hovering colors. mix with black or white depending on theme?*/
+  --background-mod-muted:color-mix(in oklab, var(--cursedcord-hover-color)10%, var(--cursedcord-bg1) 10%)!important;
+  --background-mod-subtle:color-mix(in oklab, var(--cursedcord-hover-color) 20%, var(--cursedcord-hover-color) 20%)!important;
+  --background-mod-normal:color-mix(in oklab, var(--cursedcord-hover-color)30%, var(--cursedcord-hover-color) 30%)!important;
+  --background-mod-strong:color-mix(in oklab, var(--cursedcord-hover-color)40%, var(--cursedcord-hover-color) 40%)!important;
 
-  --interactive-background-hover:rgba(255, 255, 255, 0.1); /*mabbe keep these uneditable - selection hover colors */
-  --interactive-background-selected:rgba(255, 255, 255, 0.1);
+  --control-primary-background-default:color-mix(in oklab, var(--cursedcord-bg1)100%, var(--cursedcord-bg1) 80%)!important;
+
+  --message-background-hover:var(--cursedcord-hover-color);
+  --interactive-background-hover:var(--cursedcord-hover-color); /*mabbe keep these uneditable - selection hover colors */
+  --interactive-background-selected:var(--cursedcord-hover-color);
+  --control-secondary-background-hover:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 40%)!important;
+  --control-secondary-background-active:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 40%)!important; /*adding black and white here for?? */
+
+  --control-overlay-secondary-background-default:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 80%)!important;
+  --control-overlay-secondary-background-active:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 40%)!important;
+  
+  /*colors for mentions messages */
+  --icon-feedback-warning:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 0%)!important;
+  --message-mentioned-background-default:color-mix(in oklab, var(--cursedcord-mention-color)20%, rgb(0,0,0,0) 0%)!important;
+  --message-mentioned-background-hover:color-mix(in oklab, var(--cursedcord-mention-color)60%, rgb(0,0,0,0) 0%)!important;
+  --mention-background:color-mix(in oklab, var(--cursedcord-linkcolor)30%, rgb(0,0,0,0) 0%)!important;
+  --mention-foreground:color-mix(in oklab, var(--cursedcord-linkcolor)100%, rgb(0,0,0,0) 0%)!important;
+
+  /*color of add emoji button on messages with an emoji already attached*/
+
+
+  /*colors for reply messages */
+  --brand-500:var(--cursedcord-mention-color)!important;
+  --message-highlight-background-default:color-mix(in oklab, var(--cursedcord-mention-color)20%, rgb(0,0,0,0) 0%)!important; /*for reply message coloring*/
+  --brand-10a:color-mix(in oklab, var(--cursedcord-mention-color)60%, rgb(0,0,0,0) 0%)!important;
+
+  /*the color of the box on emoji replies */
+  --brand-160:color-mix(in oklab, var(--cursedcord-primary-color)100%, rgb(0,0,0,0) 50%)!important;
+  /*color of box in emoji replies that youve already reacted to*/
+  --reaction-border-reacted-default:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 0%)!important;
+  --reaction-background-reacted-default:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 50%)!important;
+
+
+
+
+  --badge-notification-background: var(--cursedcord-notifcolor);
+
+
 
   --watermark-filter-invert: 0%;
   --watermark-filter-sepia: 50%;
@@ -25,12 +69,10 @@
   --watermark-filter-brightness: 70%;
   --watermark-filter-contrast: 200%;
 
-  --profile-gradient-secondary-color:var(--cursedcord-bg2)!important;
-  --profile-gradient-primary-color:var(--cursedcord-bg1)!important;
-  --profile-gradient-overlay-color:var(--cursedcord-bg1)!important;
+
 
   /*change message mentioned bg when right clicked */
-  --message-mentioned-background-hover:var(--cursedcord-mcolor-highlight-hover);
+  --message-mentioned-background-hover:var(--cursedcord-primary-color-highlight-hover);
 
   /*Remove rounded edges on EVERYTHING*/
   --radius-none: 0px; 
@@ -47,54 +89,77 @@
   --custom-user-profile-theme-padding: 0px!important;
 
   /*changing colors of sliders and buttons*/
-  --bd-brand: var(--cursedcord-mcolor);
-  --bd-brand-hover: var(--cursedcord-mcolor);
-  --bd-brand-active: var(--cursedcord-mcolor);
-  --background-brand: var(--cursedcord-mcolor);
-  --control-primary-background-default: var(--cursedcord-mcolor);
-  --control-primary-background-default: var(--cursedcord-mcolor);
+  /*primary bg should be all primary color*/
+  /*bg brand should be primary color*/
+  --badge-background-brand:var(--cursedcord-primary-color);
 
-  --control-primary-background-active: var(--cursedcord-scolor);
-  --control-primary-background-active: var(--cursedcord-scolor);
-  --control-primary-background-hover: var(--cursedcord-scolor);
-  --control-primary-border-hover: var(--cursedcord-scolor);
+  --bd-brand: var(--cursedcord-primary-color)!important;
+  --bd-brand-hover: var(--cursedcord-hover-color)!important;
+  --bd-brand-active: var(---cursedcord-hover-color)!important;
 
-  --radio-background-selected-default: var(--cursedcord-mcolor);
-  --radio-background-selected-hover: var(--cursedcord-scolor);
+  /*controls slider bar filled color - maybe all brand color should be primary color*/
+  --background-brand: var(--cursedcord-primary-color)!important;
+  --control-primary-background-default: var(--cursedcord-primary-color)!important;
+  --control-primary-background-default: var(--cursedcord-primary-color)!important;
 
-  --checkbox-background-selected-default:var(--cursedcord-mcolor);
-  --checkbox-background-selected-hover: var(--cursedcord-scolor);
+  --control-primary-background-active: var(--cursedcord-notifcolor)!important;
+  --control-primary-background-active: var(--cursedcord-notifcolor)!important;
+  /*controls bg of buttons when hovered*/
+  --control-primary-background-hover: var(--cursedcord-primary-color)!important; /*this cannot be the bg hover unless text is black? but even then does not make sense.*/
+  /*controls border of buttons when hovered*/
+  --control-primary-border-hover: var(--border-strong)!important;
+
+  --radio-background-selected-default: var(--cursedcord-primary-color)!important;
+  --radio-background-selected-hover: var(--cursedcord-notifcolor)!important;
+
+  --checkbox-background-selected-default:var(--cursedcord-primary-color)!important;
+  --checkbox-background-selected-hover: var(--cursedcord-notifcolor)!important;
 
 
  /* bacgkround shit --------------------------------------- */
 
   /*changes pfp and embed bg along with other things*/ 
-  --background-surface-high: var(--cursedcord-bg1)!important;
-  /*main area color*/
-  --background-base-lower:var(--cursedcord-bg1)!important;
-  --background-base-low:var(--cursedcord-bg1)!important;
+
+  --background-surface-highest: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2) 10%)!important;
+  --background-surface-higher: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2) 20%)!important;
+  --background-surface-high: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)40%)!important;
+  --background-base-lower: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)60%)!important;
+  --background-base-low: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)80%)!important;
+  --background-base-lowest: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)90%)!important;
+  --chat-background-default: var(--background-base-low)!important;
+  /*--background-base-lowest: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)90%)!important;  this makes the tab lower in brightness when tabbed out for some reason? does not seem to affect color in any other way/*
 
   /*pfp colors -- keep them similar*/
-  --user-profile-overlay-background:var(--cursedcord-bg2)!important;
-  --background-surface-highest:var(--cursedcord-bg2)!important;
-  --opacity-white-12:var(--cursedcord-bg2)!important;
+  --user-profile-overlay-background: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)65%)!important;
+  
+  --opacity-white-12: color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)65%)!important;
+
+  --control-secondary-background-default:color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg2)90%)!important;
+
+
+  /*for ovveriding profile themes, must keep*/
+  --profile-gradient-bg1:var(--cursedcord-bg1)!important; /*may or may not do something*/
+  --profile-gradient-primary-color:var(--cursedcord-bg1)!important;
+  --profile-gradient-overlay-color:color-mix(in oklab, var(--cursedcord-bg1), var(--cursedcord-bg1)85%)!important; /*this is the only one that works?*/
 
   /* message bar */
-  --chat-background-default:var(--cursedcord-bg2)!important;
   
-  --background-base-lowest:var(--cursedcord-bg2)!important;
+  
 
  /* end -------------------------------------------------------*/
 
   /*these 2 change color of all links / link icons */
   --text-link:var(--cursedcord-linkcolor);
   --icon-link:var(--cursedcord-linkcolor); /*maybve give these 2 seperate colorings? in base discord they were slightly darker than the normal blue */
+  --text-brand: var(--cursedcord-primary-color);
+  
+  
 
-  --text-brand: var(--cursedcord-mcolor);
 
-
-  --background-feedback-notification: var(--cursedcord-scolor); 
-  --text-overlay-light: rgb(0, 0, 0);/* controls text color on notifs i think
+  --background-feedback-notification: var(--cursedcord-notifcolor); 
+  --text-overlay-light: rgb(0, 0, 0);/* controls text color on notifs i think */
+  /* controls color of when "NEW" notification is pressed*/
+  --red-430: var(--cursedcord-notifcolor); 
 
   /* change border color */
   --border-feedback-critical: var(--cursedcord-border);
@@ -103,16 +168,51 @@
   --border-normal:  var(--cursedcord-border);
   --border-strong:  var(--cursedcord-border);
   --border-subtle: var(--cursedcord-border);
+  --app-frame-border: var(--cursedcord-border);
 
   /*changing text colors - organized in order of brightest to darkest based on discords default coloring*/
-  --text-strong:rgb(255, 255, 255); 
-  --text-default:rgb(255, 255, 255);
-  --interactive-text-default: color-mix(in oklab, var(--text-strong) 70%, rgba(0,0,0,1) 30%)!important;
+  --control-primary-text-default:var(--cursedcord-primary-text-color); 
+  /*--control-secondary-text-hover: var(--cursedcord-secondary-text-color)!important;
+  --interactive-text-hover: var(--cursedcord-secondary-text-color)!important; deciding on these. not sure of a good way to easily control them and still have them not clash with other colors*/
+
+  --text-strong:var(--cursedcord-primary-text-color); 
+  --text-default:var(--cursedcord-primary-text-color);
+  --control-secondary-text-default:var(--cursedcord-primary-text-color);
+  --white:var(--cursedcord-primary-text-color);
+  /*--interactive-text-active:color-mix(in oklab, var(--text-strong) 100%, white 50%)!important; /*leave white or cahnge?*/ 
+  --interactive-text-default: color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color)70%)!important;
+  --channel-text-area-placeholder:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
+  --text-subtle:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
+  --channels-default:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
+  --channel-icon:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
+  --text-muted:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
+  --input-placeholder-text-default:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
+  --chat-text-muted:color-mix(in oklab, var(--text-strong) 70%, var(--cursedcord-secondary-text-color) 100%)!important;
+
+  --icon-strong:var(--cursedcord-primary-text-color); 
+  --icon-subtle:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
+  --icon-muted:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 50%)!important;
+
+  --interactive-icon-default:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 50%)!important;
+  
+  --neutral-9:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
+
+
+  /*MENTIONS MESSAGE COLOR*/
+
+
+
+
 
 
 }
-* {
+*,
+*:before,
+*:after {
   border-radius:0px !important;
+  font-family: "IBM Plex Serif", serif!important;
+  font-weight: 400;
+  font-style: normal;
 } 
 
 
@@ -132,7 +232,7 @@
  -fix white bar appearing randomly between channels
  -follow discord orignal bg scheme maybe?
  -change switches from flashing blue when toggling
- -find something to do with the top of servers list 
+ -find something to do with the top of servers list ~~
  -fix new notifs
  -unify highlight color everywhere
  -fix home icon appaering behind gcs with no pfp when they have unread messages
@@ -140,9 +240,11 @@
 */
 
 
-
-
-
+/*controls server role colors*/
+.nameContainer__703b9 {
+  /* all:var(--cursedcord-server-role-colors); /*this bullshit doesnt work. angry */
+  color:var(--cursedcord-primary-text-color);
+}
 
 /*removing borders from pfp at the top where name is in dms*/
 ._44b0c28be7879b7b-mask foreignObject,
@@ -155,19 +257,31 @@
 /*changes text color on notif popups*/
 .numberBadge__2b1f5{
   color:var(--cursedcord-notiftext)!important;
+  background-color:var(--cursedcord-notifcolor)!important;
 }
 
-/*making find or start conversation one pixel taller*/
-.searchBar_e6b769  {
-  height: calc(var(--custom-channel-header-height) + 1px);
+/*little blip on the left for notification bubble on servers tab for dms only*/
+.item__58105 {
+  background-color: var(--cursedcord-notifcolor);
 }
+
+/*little blip on the left for notification bubble for dms only*/
+.unreadPill__972a0 {
+  background-color: var(--cursedcord-notifcolor);
+}
+
 /*--------------------------------------- FOR SWITCHES -------------------------------- */
-.switchIndicator_a28278[style="opacity: 1; background-color: rgb(88, 101, 242); border: 1px solid rgba(151, 151, 159, 0.2);"]{
-  background-color: var(--cursedcord-mcolor)!important;
+/*when switch is turned on*/
+.switchIndicator_a28278[style="opacity: 1; background-color: rgb(88, 101, 242); border: 1px solid rgba(151, 151, 159, 0.12);"]{
+  background-color: var(--cursedcord-primary-color)!important;
 }
 
+/*when switch is hovered in on state*/
+.switchIndicator_a28278[style="opacity: 1; background-color: rgb(68, 82, 187); border: 1px solid rgba(151, 151, 159, 0.12);"]{
+  background-color: var(--background-surface-highest)!important;
+}
+/* when switch is hovered in off state*/
 .switchIndicator_a28278:hover{
-  background-color: var(--cursedcord-scolor)!important;
 }
 
 .switchIndicator_a28278.input:checked{
@@ -183,7 +297,7 @@
 /*home icon */
 .childWrapper__6e9f8:first-of-type,
 .childWrapperNoHoverBg__6e9f8:first-of-type {
-  background: var(--home-icon) center/cover no-repeat !important;
+  background: var(--cursedcord-home-icon) center/cover no-repeat !important;
 }
 
 /* gets rid of discord logo in top left */
@@ -213,6 +327,15 @@
   border-radius:0px!important;
 }
 /*---------------------------- for message bar --------------------------*/
+
+/*spcifically for when message bar has "gollow tog et this channels updates in your own server" */
+.wrapper__44df5{
+  top:9px!important;
+  border-left:none!important;
+  border-right:none!important;
+}
+
+
 .scrollerSpacer__36d07 {
   height:20px;
 }
@@ -239,6 +362,16 @@
 .sidebarList__5e434 {
   border-top:none;
   border-left:none;
+  border-right:1px solid var(--cursedcord-border)!important;
+}
+/* controls friends tab + freinds list + active now*/
+.container__133bf {
+  border-top:none!important;
+}
+
+/*top border for server channel name /search / pins etc*/
+.chat_f75fb0[data-has-border=true] {
+  border-top:none!important
 }
 
 /*remvong left margin on channels*/
@@ -249,21 +382,6 @@
   margin:0px!important;
 }
 
-/*mentions color on the left side*/
-.mentioned__5126c:before {
-  background: var(--cursedcord-mcolor);
-}
-
-/*mentions color*/
-.mentioned__5126c {
-  background: var(--cursedcord-mcolor-highlight);
-}
-
-/*mentions color when hovered*/
-.mouse-mode.full-motion,
-.message__5126c.mentioned__5126c:hover  {
-  background: var(--cursedcord-mcolor-highlight-hover)!important;
-}
 
 /*new message line that shows in text channels above all the unread messages so far */
 .endCap__908e2 {
@@ -293,6 +411,14 @@
   display: none;
 }
 
+/*controls the L bracket stemming from thread channel */
+.spine__5b40b, .spineBorder__5b40b {
+  left:-10px;
+}
+/*target specifically threads to move right */
+ul[role="group"] > .containerDefault_c69b6d{
+  left:33px!important;
+}
 /*move hastag on text channels slightly over */
 .iconContainer__2ea32 {
   margin-left:7px;
@@ -307,7 +433,7 @@
 .pill_e5445c * {
   width: 4px;
   border-radius: 0px;
-  background-color: var(--cursedcord-scolor);
+  background-color: var(--cursedcord-notifcolor);
   background-repeat: no-repeat;
   margin-left: 0px;
   left:0px;
@@ -324,7 +450,7 @@
   width: 20px;
   height: 30px;
   border-radius: 0px;
-  background-color: var(--cursedcord-scolor);
+  background-color: var(--cursedcord-notifcolor);
   background-repeat: no-repeat;
   margin-left: -0px;
   left:0px;
@@ -340,7 +466,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-color: var(--cursedcord-mcolor);
+  background-color: var(--cursedcord-primary-color);
   mask-repeat: no-repeat;
   mask-image: url("https://i.postimg.cc/mgHR5ghq/channel-border.png");
   mask-size: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 10px) 50px;
@@ -352,11 +478,11 @@
 
 /* top bar bg */
 .bar_c38106{
-  background-color: var(--cursedcord-mcolor);
+  background-color: var(--cursedcord-primary-color);
 }
 
 .itemsContainer_ef3116 {
-  background-color: var(--cursedcord-mcolor);
+  background-color: var(--cursedcord-primary-color);
 }
 
 /* NOTIFICATIONS AT TOP OF SCREEN*/
@@ -366,7 +492,7 @@
 
 /*backgrounds*/
 .ef3116c2da186559-wrapper{
-    background-color: var(--cursedcord-mcolor);
+    background-color: var(--cursedcord-primary-color);
 }
 /*----------------------SERVER CHANNELS COLUMN---------------------------*/
 
@@ -387,7 +513,7 @@
   inset: 0; /* for some reason these 3 things make it work */
   top:0; /*religns mask on servers with a banner*/
 
-  background-color: var(--cursedcord-mcolor);
+  background-color: var(--cursedcord-primary-color);
   -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
   -webkit-mask-size: 1000px 130px;
   -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px);
@@ -472,7 +598,7 @@
   height: 10px;
 }
 .progressContainer__0d0f9{
-  background-color: var(--cursedcord-scolor);
+  background-color: var(--cursedcord-notifcolor);
   border-bottom: 1px solid var(--cursedcord-border);
 }
 .full-motion,
@@ -523,7 +649,7 @@
 /*progress bar boost goal */
 .progress__0d0f9{
   background:none;
-  background-color: var(--cursedcord-mcolor);
+  background-color: var(--cursedcord-primary-color);
   -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
   -webkit-mask-size: 1000px 1000px;
   height: 11px;
@@ -537,7 +663,17 @@
 /*--------------------------------------------------------------------------------*/
 
 
+/*all icons that are controlled by notifcolor*/
+.base__2b1f5 {
+  /*
+  color:var(--cursedcord-notiftext)!important;
+  background-color: var(--cursedcord-notifcolor)!important;
 
+/*-------------------------------------------------------- */
+
+
+  
+}
 foreignObject[x="0"][width="20"][height="20"][mask]{
   mask:none;
 }
@@ -574,15 +710,13 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
   mask: none !important;
 }
 
-._5e434347c823b592-content{
-    background-color: var(--cursedcord-bg1);
+.root_bfe55a {
+  background:var(--background-base-lowest);
 }
 
 
 /*ring x to general dms popup*/
 .a53846f6e9583cbd-chatHeaderBar{
-  background: none!important;
-  background-color: var(--cursedcord-bg2)!important;
   border-bottom:1px solid var(--cursedcord-border);
 }
 /*ring x to general container*/
@@ -592,7 +726,6 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 }
 
 ._9293f6b2fc12398a-container{
-  background-color: var(--cursedcord-bg2)!important;
 }
 
 /*border for message box */
@@ -633,8 +766,12 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 /*removing rounded edges and adding border to user pfp */
 .c19a557985eb7793-avatar {
   border-radius: 0px;
-  background-color: var(--cursedcord-mcolor);
-  outline: solid var(--cursedcord-bg2) 2px !important;
+  background-color: var(--cursedcord-primary-color);
+}
+
+/* remove circle mask from user pfp in settings*/
+foreignObject[width="48"][height="48"][x="0"][mask]{
+  mask:none!important;
 }
 /* targets server icon makes. makes servers square*/
 foreignObject[width="40"][height="40"],
@@ -671,7 +808,32 @@ foreignObject[width="32"][height="32"]{
 
 /*--------------------------------------------------nitro features---------------------------------------*/
 
-.custom-user-profile-theme,
+/*removes all nitro user name effects*/
+[class*="dfb"]:before,
+[class*="dfb"]
+{
+  all: unset!important;
+}
+
+
+/*removing custom fonts */
+[class*="zillaSlab"]
+ {
+  font-family:inherit!important;
+  letter-spacing: inherit!important;
+}
+
+/*removing guild tags */
+.chipletContainerInner__10651,.chipletContainerInline__10651, .clanTag__972a0{
+  display:var(--cursedcord-guildtags)!important;
+}
+
+/* color themes and in app icon nitro features in appearance tab*/
+.container_a1d343,
+.colorThemesBackground_fbfab6,
+[data-nav-anchor-key="appearance_icon_category"] {
+    display:none;
+}
 .inner_c0bea0
 {
   border-left:1px solid var(--cursedcord-border);
@@ -699,6 +861,23 @@ foreignObject[width="32"][height="32"]{
   display: var(--cursedcord-decorations);
 }
 
+/*profile popout background*/
+[class*="backgroundImage"]{
+  display:none;
+  background-image: none!important;
+    background-image: none!important;
+  background-color: var(--cursedcord-bg1)!important;
+  background: none !important;
+}
+
+/*profile popout gradient removing. need to keep color ovveride here*/
+.custom-user-profile-theme, .profile__9c3be:before {
+  background: var(--background-surface-high)!important;
+}
+.custom-user-profile-theme.user-profile-modal-v2:before, .inner_c0bea0 {
+  background: var(--background-base-lowest)!important;
+}
+
 /*profile background startup animation */
 ._0137000bc80ab6ea-inner{
   display: var(--cursedcord-decorations);
@@ -709,9 +888,19 @@ foreignObject[width="32"][height="32"]{
   display: var(--cursedcord-decorations);
 }
 
+
+/*remobing nitro and shop from dms list */
+li:has(a[data-list-item-id$="___nitro"]){
+  display: var(--cursedcord-nitrotoggle);
+}
+a[data-list-item-id$="___shop"] {
+  display: var(--cursedcord-shoptoggle);
+}
+
+/* ------------------------------------------------------- CHAT MESSAGE BAR -----------------------------------------*/
 /*removing nitro gift from message box -- BROKEN -- NEED TO FIX*/
-.button__74017[aria-label="Send a gift"] {
-  display:var(--cursedcord-nitrotoggle);
+svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;"] {
+  display:var(--cursedcord-nitrotoggle)!important;
 }
 /*remove sticker button from message box*/
 .stickerButton__74017{
@@ -723,18 +912,20 @@ foreignObject[width="32"][height="32"]{
   display: var(--cursedcord-appbutton);
 }
 
-/*remobing nitro and shop from dms list */
-li:has(a[data-list-item-id$="___nitro"]){
-  display: var(--cursedcord-nitrotoggle);
-}
-a[data-list-item-id$="___shop"] {
-  display: var(--cursedcord-shoptoggle);
-}
 
 /* ----------------------------------------------------------------------------------*/
+
+/* view full profile button bottom right of user popout menu */
+.footer__7f9c0 {
+  border-color: var(--cursedcord-border);
+  
+}
+
+.footerButton__7f9c0 {
+  height: 56px;
+}
 /*bg of "message user" in pfp popout*/
 .container_a99829{
-  background-color: var(--cursedcord-bg2);
 }
 /*buncha borders shit */
 .c8ffbb79449f399c-container,
@@ -825,10 +1016,12 @@ a[data-list-item-id$="___shop"] {
 /*controls bottom left panels */
 .panels__5e434 {
   border-radius: 0px;
-  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + var(--custom-guild-list-width) + 5px);
+  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + var(--custom-guild-list-width) + 2px);
   left:-1%;
+
   bottom:0px;
   border:none!important;
+  border-top: 1px solid var(--cursedcord-border) !important;
 }
 
 .visual-refresh,
@@ -868,6 +1061,10 @@ mask circle[r="46"] {
   border-radius:0px!important;
 }
 
+.container_ab8609{
+      top: calc(var(--custom-user-profile-banner-height) + 5px)!important;
+}
+
 /* --------------------------------USER STATUS INDICATOR*--------------------------------*/
 
 
@@ -876,6 +1073,9 @@ mask circle[r="46"] {
 }
 
 rect[fill="black"][height="36"][width="28"]{
+  display:none; 
+}
+rect[fill="white"][height="36"][width="28"]{
   display:none; 
 }
 /*move position of online / dnd/ away circle*/
@@ -903,7 +1103,7 @@ svg[width="40"][height="24"][viewbox="0 0 40 24"]{
 
 g rect[width="12"][height="12"][x="28"][mask][class]{
   mask:none;
-  transform: translate(-7px,-7px) scale(1.2,1.2);
+  transform: translate(-16px,-16px) scale(1.4,1.4);
 }
 
 g rect[width="12"][height="18"][x="28"][y="22"][mask][class]{
@@ -919,8 +1119,6 @@ rect[width="25"][height="15"] {
     height:15px;
     width: 15px;
     transform: translate(3px, 1px);
-    stroke: var(--cursedcord-border) !important;
-  stroke-width: 1px;
 }
 rect[width="40"][height="24"][mask] {
   mask:none;
@@ -930,27 +1128,29 @@ g rect[width="10"][height="10"][x="22"][mask] {
     height:15px;
     width: 15px;
     transform: translate(-5px, -5px);
-  stroke: var(--cursedcord-border) !important;
-  stroke-width: 1px;
   mask:none;
 }
 rect[width="10"][height="15"][x="22"][y="17"] {
   stroke-width: 0px!important;
+  transform: translate(-5px, 0px);
 }
 circle[fill="black"][cx="68"],
 circle[fill="white"][cx="68"],
 circle[fill="black"][cx="92"][cy="140"],
+circle[fill="white"][cx="92"][cy="140"],
 circle[fill="black"][r="10"][cx="34"],
+circle[fill="white"][r="10"][cx="34"],
 rect[fill="black"][height="26"][width="20"],
-circle[fill="black"][r="20"][cy="100"]{
+rect[fill="white"][height="26"][width="20"],
+circle[fill="black"][r="20"][cy="100"],
+circle[fill="white"][r="20"][cy="100"]{
     display:none!important;
 }
+
+
 rect[width="10"][height="15"][x="22"] {
     height:15px;
     width: 15px;
-    transform: translate(-5px, -0px);
-    stroke: var(--cursedcord-border) !important;
-  stroke-width: 1px;
   mask:none!important;
 }
 
@@ -1031,7 +1231,7 @@ foreignObject[x="0"][width="120"][mask]{
   overflow: visible !important;
   clip-path: none !important;
   mask: none !important;
-  background-color: var(--cursedcord-scolor);
+  background-color: var(--cursedcord-notifcolor);
 }
 
 ._629e4c86564a4ee7-unreadBottom {
@@ -1039,7 +1239,6 @@ foreignObject[x="0"][width="120"][mask]{
 }
 
 .unreadMentionsIndicatorTop_ef3116{
-  top:-10px;
   border:none;
 }
 
@@ -1089,10 +1288,27 @@ foreignObject[x="0"][width="120"][mask]{
   width: 120px!important;
 }
 
-/*LARGE NOTIF BAR*/
-_629e4c86564a4ee7-unreadTop _629e4c86564a4ee7-unread _3b95d7d910416e54-container
-_629e4c86564a4ee7-unreadBottom _629e4c86564a4ee7-unread _3b95d7d910416e54-container
+/* COLOR CHANGES */
+/*status message*/
+/*
+.inner_ab8609 {
+  background-color: var(--cursedcord-bg1)!important;
+}
 
-/*SMALL NOTIF BAR*/
-_7aaec78b97ff00f7-container _7aaec78b97ff00f7-bottom
-_7aaec78b97ff00f7-container _7aaec78b97ff00f7-top
+/*"view full profile popout bg in dms */
+/*
+.inner_c0bea0 {
+  background-color: var(--cursedcord-bg1)!important;
+}
+
+/*username /call button / pin message etc top bar*/
+/*
+.themed__9293f
+{
+  background-color: var(--cursedcord-bg2)!important;
+}
+
+.panels__5e434,.panel__5dec7,.activityPanel__5e434 {
+  background-color: var(--cursedcord-bg2)!important;
+}
+/*
