@@ -268,12 +268,12 @@
 
 /*--------------------------------------- FOR SWITCHES -------------------------------- */
 /*when switch is turned on*/
-.switchIndicator_a28278[style="opacity: 1; background-color: rgb(88, 101, 242); border: 1px solid rgba(151, 151, 159, 0.12);"]{
+.switchIndicator_a28278[style="opacity: 1; background-color: rgb(88, 101, 242); border: 1px solid rgba(151, 151, 159, 0.2);"]{
   background-color: var(--cursedcord-primary-color)!important;
 }
 
 /*when switch is hovered in on state*/
-.switchIndicator_a28278[style="opacity: 1; background-color: rgb(68, 82, 187); border: 1px solid rgba(151, 151, 159, 0.12);"]{
+.switchIndicator_a28278[style="opacity: 1; background-color: rgb(68, 82, 187); border: 1px solid rgba(151, 151, 159, 0.2);"]{
   background-color: var(--background-surface-highest)!important;
 }
 /* when switch is hovered in off state*/
