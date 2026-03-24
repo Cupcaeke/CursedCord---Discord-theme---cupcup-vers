@@ -12,7 +12,7 @@
   /* --cursedcord-server-role-colors:unset!important; CURRENTLY BROKEN*/
 
 
-  /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
+   /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
   /*rebalance colors idk how yet -- these are hovering colors. mix with black or white depending on theme?*/
   --background-mod-muted:color-mix(in oklab, var(--cursedcord-hover-color)10%, var(--cursedcord-bg1) 10%)!important;
   --background-mod-subtle:color-mix(in oklab, var(--cursedcord-hover-color) 20%, var(--cursedcord-hover-color) 20%)!important;
@@ -185,7 +185,7 @@
   --input-placeholder-text-default:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
   --chat-text-muted:color-mix(in oklab, var(--text-strong) 70%, var(--cursedcord-secondary-text-color) 100%)!important;
 
-  --icon-strong:var(--cursedcord-primary-text-color)!important; 
+  --icon-strong:var(--cursedcord-primary-text-color); 
   --icon-subtle:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
   --icon-muted:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 50%)!important;
 
@@ -199,11 +199,16 @@
 
 
 
+
+
 }
 *,
 *:before,
 *:after {
   border-radius:0px !important;
+  font-family: "IBM Plex Serif", serif!important;
+  font-weight: 400;
+  font-style: normal;
 } 
 
 
@@ -234,14 +239,14 @@
 /*controls server role colors*/
 .nameContainer__703b9 {
   /* all:var(--cursedcord-server-role-colors); /*this bullshit doesnt work. angry */
-  color:var(--cursedcord-primary-text-color);
+  color:var(--cursedcord-primary-text-color)!important;
 }
 
 /*removing borders from pfp at the top where name is in dms*/
 ._44b0c28be7879b7b-mask foreignObject,
 ._44b0c28be7879b7b-svg foreignObject {
-  display:hidden;
-  mask:none;
+  display:hidden!important;
+  mask:none!important;
 }
 
 
@@ -253,12 +258,12 @@
 
 /*little blip on the left for notification bubble on servers tab for dms only*/
 .item__58105 {
-  background-color: var(--cursedcord-notifcolor);
+  background-color: var(--cursedcord-notifcolor)!important;
 }
 
 /*little blip on the left for notification bubble for dms only*/
 .unreadPill__972a0 {
-  background-color: var(--cursedcord-notifcolor);
+  background-color: var(--cursedcord-notifcolor)!important;
 }
 
 /*--------------------------------------- FOR SWITCHES -------------------------------- */
@@ -280,7 +285,7 @@
 }
 
 .thumb_a28278 {
-  background-color: white;
+  background-color: white!important;
 }
 
 /*--------------------------------------------------------------------*/
@@ -293,23 +298,23 @@
 
 /* gets rid of discord logo in top left */
 .childWrapperNoHoverBg__6e9f8 svg {
-  display:none;
+  display:none!important;
 }
 
 ._6e9f8dce4cc18de3-wrapper[data-list-item-id="guildsnav___home"] ._6e9f8dce4cc18de3-childWrapper svg {
-  display: none;
+  display: none!important;
 }
 .dfb989b3f435152a-innerContainer,
 .dfb989b3f435152a-solid{
-  --custom-display-name-styles-main-color: none;
-  --custom-display-name-styles-light-1-color: none;
-  --custom-display-name-styles-light-2-color: none;
-  --custom-display-name-styles-dark-1-color: none;
-  --custom-display-name-styles-dark-2-color: none;
-  --custom-display-name-styles-toon-stroke-color: none;
-  --custom-display-name-styles-neon-stroke-color: none;
-  --custom-display-name-styles-wrap: nowrap;
-  --custom-display-name-styles-font-opacity: 1;
+  --custom-display-name-styles-main-color: none!important;
+  --custom-display-name-styles-light-1-color: none!important;
+  --custom-display-name-styles-light-2-color: none!important;
+  --custom-display-name-styles-dark-1-color: none!important;
+  --custom-display-name-styles-dark-2-color: none!important;
+  --custom-display-name-styles-toon-stroke-color: none!important;
+  --custom-display-name-styles-neon-stroke-color: none!important;
+  --custom-display-name-styles-wrap: nowrap!important;
+  --custom-display-name-styles-font-opacity: 1!important;
 }
 
 
@@ -328,12 +333,12 @@
 
 
 .scrollerSpacer__36d07 {
-  height:20px;
+  height:20px!important;
 }
 .form_f75fb0,
 .formWithLoadedChatInput_f75fb0  {
-  padding:0px;
-  margin:0px;
+  padding:0px!important;
+  margin:0px!important;
   border:none!important;
   outline:none!important;
 }
@@ -351,8 +356,8 @@
 }
 /*----------------------------------------*/
 .sidebarList__5e434 {
-  border-top:none;
-  border-left:none;
+  border-top:none!important;
+  border-left:none!important;
   border-right:1px solid var(--cursedcord-border)!important;
 }
 /* controls friends tab + freinds list + active now*/
@@ -380,7 +385,7 @@
 }
 
 .ro{
-  size:1px;
+  size:1px!important;
 }
 
 .b52e4f70d11a5ca2-gameIcon{
@@ -399,12 +404,12 @@
 }
 
 .container > ._44b0c28be7879b7b-wrapper:nth-child(2) svg {
-  display: none;
+  display: none!important;
 }
 
 /*controls the L bracket stemming from thread channel */
 .spine__5b40b, .spineBorder__5b40b {
-  left:-10px;
+  left:-10px!important;
 }
 /*target specifically threads to move right */
 ul[role="group"] > .containerDefault_c69b6d{
@@ -412,68 +417,68 @@ ul[role="group"] > .containerDefault_c69b6d{
 }
 /*move hastag on text channels slightly over */
 .iconContainer__2ea32 {
-  margin-left:7px;
+  margin-left:7px!important;
 }
 
 
 /*for notif button thing blip thingamijig on servers list*/
 .pill_e5445c,
 .wrapper__58105 {
-  width:16px;
+  width:16px!important;
 }
 .pill_e5445c * {
-  width: 4px;
-  border-radius: 0px;
-  background-color: var(--cursedcord-notifcolor);
-  background-repeat: no-repeat;
-  margin-left: 0px;
-  left:0px;
-  margin-top: 0px; 
-  /* mask-repeat:repeat;
-  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png");
-  mask-size: 200px 90px;
-  mask-position: 0px -23px; */
+  width: 4px!important;
+  border-radius: 0px!important;
+  background-color: var(--cursedcord-notifcolor)!important;
+  background-repeat: no-repeat!important;
+  margin-left: 0px!important;
+  left:0px!important;
+  margin-top: 0px!important; 
+  /* mask-repeat:repeat!important;
+  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png")!important;
+  mask-size: 200px 90px!important;
+  mask-position: 0px -23px!important; */
 }
 
 /*text channel new notif button thing blip thingamajig */
 .unread__2ea32,
 .unreadImportant__2ea32{
-  width: 20px;
-  height: 30px;
-  border-radius: 0px;
-  background-color: var(--cursedcord-notifcolor);
-  background-repeat: no-repeat;
-  margin-left: -0px;
-  left:0px;
-  margin-top: -20px;
-  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png");
-  mask-size: 200px 40px;
-  mask-repeat: no-repeat;
+  width: 20px!important;
+  height: 30px!important;
+  border-radius: 0px!important;
+  background-color: var(--cursedcord-notifcolor)!important;
+  background-repeat: no-repeat!important;
+  margin-left: -0px!important;
+  left:0px!important;
+  margin-top: -20px!important;
+  mask-image: url("https://i.postimg.cc/MpwmCfvB/fuckasswoifna.png")!important;
+  mask-size: 200px 40px!important;
+  mask-repeat: no-repeat!important;
 }
 
 
 /*channel group background*/
 .mainContent__29444::after{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--cursedcord-primary-color);
-  mask-repeat: no-repeat;
-  mask-image: url("https://i.postimg.cc/mgHR5ghq/channel-border.png");
-  mask-size: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 10px) 50px;
-  mask-position: 0px,0px;
-  margin-top: 0px;
-  height: 25px;
-  z-index: -2;
+  content: ""!important;
+  position: absolute!important;
+  inset: 0!important;
+  background-color: var(--cursedcord-primary-color)!important;
+  mask-repeat: no-repeat!important;
+  mask-image: url("https://i.postimg.cc/mgHR5ghq/channel-border.png")!important;
+  mask-size: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 10px) 50px!important;
+  mask-position: 0px,0px!important;
+  margin-top: 0px!important;
+  height: 25px!important;
+  z-index: -2!important;
 }
 
 /* top bar bg */
 .bar_c38106{
-  background-color: var(--cursedcord-primary-color);
+  background-color: var(--cursedcord-primary-color)!important;
 }
 
 .itemsContainer_ef3116 {
-  background-color: var(--cursedcord-primary-color);
+  background-color: var(--cursedcord-primary-color)!important;
 }
 
 /* NOTIFICATIONS AT TOP OF SCREEN*/
@@ -483,13 +488,13 @@ ul[role="group"] > .containerDefault_c69b6d{
 
 /*backgrounds*/
 .ef3116c2da186559-wrapper{
-    background-color: var(--cursedcord-primary-color);
+    background-color: var(--cursedcord-primary-color)!important;
 }
 /*----------------------SERVER CHANNELS COLUMN---------------------------*/
 
 /*server banner*/
 .animatedContainer_f37cb1{
-  top:48px;
+  top:48px!important;
 }
 
 /* remove border from server name bg on servers specifically with banners */
@@ -499,22 +504,22 @@ ul[role="group"] > .containerDefault_c69b6d{
 }
 /*server name bg */
 .header_f37cb1::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* for some reason these 3 things make it work */
-  top:0; /*religns mask on servers with a banner*/
+  content: ""!important;
+  position: absolute!important;
+  inset: 0!important; /* for some reason these 3 things make it work */
+  top:0!important; /*religns mask on servers with a banner*/
 
-  background-color: var(--cursedcord-primary-color);
-  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
-  -webkit-mask-size: 1000px 130px;
-  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px);
+  background-color: var(--cursedcord-primary-color)!important;
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png")!important;
+  -webkit-mask-size: 1000px 130px!important;
+  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px)!important;
 
-  pointer-events: none;
+  pointer-events: none!important;
 }
 
 
 .header_f37cb1 {
-  border-bottom: none;
+  border-bottom: none!important;
 }
 
 /*removing padding from server name + icons */
@@ -525,48 +530,48 @@ ul[role="group"] > .containerDefault_c69b6d{
 /*adding buffer for servers with banner */
 .hasBanner_f37cb1,
 .bannerVisible_f37cb1 {
-  margin-bottom:50px;
+  margin-bottom:50px!important;
 }
 
 /*controls arrow dropdown on server name */
 .f37cb1984c371ee5-headerChildren{
-  right:30px;
+  right:30px!important;
 }
 
 /*server name button*/
 .f37cb1984c371ee5-guildDropdown {
-  border-radius: 0px;
-  height: 45px;
-  width: 365px;
-  margin: 0px;
-  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
-  -webkit-mask-size: 1000px 130px;
-  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px);
+  border-radius: 0px!important;
+  height: 45px!important;
+  width: 365px!important;
+  margin: 0px!important;
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png")!important;
+  -webkit-mask-size: 1000px 130px!important;
+  -webkit-mask-position-x: calc(var(--custom-guild-sidebar-width) + 70px)!important;
 }
 
 /*removing margins off something */
 .f37cb1984c371ee5-header,
 .f37cb1984c371ee5-headerContent {
   margin:0px!important;
-  left:0px;
+  left:0px!important;
 }
 
 /*moves invite to server */
 .inviteButton_f37cb1{
-  position:absolute;
-  right: -21px;
-  margin-top: -20px;
-  -webkit-mask-image: url("https://i.postimg.cc/JzmKmMrB/server-invite-button-mask.png");
-  -webkit-mask-size: 47px 43px;
-  -webkit-mask-position: 0px 0px;
-  mask-repeat: no-repeat;
-  width: 70px;
-  height:50px;
-  overflow:hidden;
+  position:absolute!important;
+  right: -21px!important;
+  margin-top: -20px!important;
+  -webkit-mask-image: url("https://i.postimg.cc/JzmKmMrB/server-invite-button-mask.png")!important;
+  -webkit-mask-size: 47px 43px!important;
+  -webkit-mask-position: 0px 0px!important;
+  mask-repeat: no-repeat!important;
+  width: 70px!important;
+  height:50px!important;
+  overflow:hidden!important;
 }
 
 .f37cb1984c371ee5-inviteButton svg{
-  transform: translate(5px,5px);
+  transform: translate(5px,5px)!important;
 }
 
 
@@ -574,23 +579,23 @@ ul[role="group"] > .containerDefault_c69b6d{
 /*getting rid of right margin on text channel scroller */
 .d125d22cdfd32cfe-fade,
 .d125d22cdfd32cfe-content {
-  padding:0px;
-  margin:0px;
+  padding:0px!important;
+  margin:0px!important;
 }
 
 /*boost goal container */
 .container__0d0f9m,
 .containerWithMargin__0d0f9{
-  padding: 0px;
-  margin:0px;
-  padding-top: 0px;
-  top:-15px;
-  border: none;
-  height: 10px;
+  padding: 0px!important;
+  margin:0px!important;
+  padding-top: 0px!important;
+  top:-15px!important;
+  border: none!important;
+  height: 10px!important;
 }
 .progressContainer__0d0f9{
-  background-color: var(--cursedcord-notifcolor);
-  border-bottom: 1px solid var(--cursedcord-border);
+  background-color: var(--cursedcord-notifcolor)!important;
+  border-bottom: 1px solid var(--cursedcord-border)!important;
 }
 .full-motion,
 .progressContainer__0d0f9{
@@ -603,9 +608,9 @@ ul[role="group"] > .containerDefault_c69b6d{
 }
 
 .container__0d0f9{
-  border-top: 0px;
-  border-bottom: 0px;
-  border:none;
+  border-top: 0px!important;
+  border-bottom: 0px!important;
+  border:none!important;
 }
 .contentContainer__0d0f9:focus-visible,
 .progressContainer__0d0f9:focus-visible{
@@ -614,7 +619,7 @@ ul[role="group"] > .containerDefault_c69b6d{
 /*remove shit getting bigger on hover */
 .full-motion,
 .progressContainer__0d0f9{
-  transition:none;
+  transition:none!important;
 }
 /*remove shit getting bigger on hover */
 .contentContainer__0d0f9:hover,
@@ -629,27 +634,27 @@ ul[role="group"] > .containerDefault_c69b6d{
 }
 /*progress container for server boost bar */
 .progressContainer__0d0f9{
-  border-radius: 0px;
-  background-color: none;
-  background: none;
-  padding: 0px;
-  margin:0px;
-  height: 10px;
+  border-radius: 0px!important;
+  background-color: none!important;
+  background: none!important;
+  padding: 0px!important;
+  margin:0px!important;
+  height: 10px!important;
 }
 
 /*progress bar boost goal */
 .progress__0d0f9{
-  background:none;
-  background-color: var(--cursedcord-primary-color);
-  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png");
-  -webkit-mask-size: 1000px 1000px;
-  height: 11px;
-  left:-1px;
-  top:0px;
+  background:none!important;
+  background-color: var(--cursedcord-primary-color)!important;
+  -webkit-mask-image: url("https://i.postimg.cc/ZRFgCjL2/server-name-bg.png")!important;
+  -webkit-mask-size: 1000px 1000px!important;
+  height: 11px!important;
+  left:-1px!important;
+  top:0px!important;
 }
 
 .textContainer__0d0f9{
-  display:none;
+  display:none!important;
 }
 /*--------------------------------------------------------------------------------*/
 
@@ -666,7 +671,7 @@ ul[role="group"] > .containerDefault_c69b6d{
   
 }
 foreignObject[x="0"][width="20"][height="20"][mask]{
-  mask:none;
+  mask:none!important;
 }
 /* removes rounded edges on pip stream */
 ._2b2f1bb918566c48-elevationHigh{
@@ -679,9 +684,9 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 
 /*moving channel selection bg over to the left*/
 ._2ea32c412048f708-link{
-  left:-8px;
-  padding-left:20px;
-  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 1px);
+  left:-8px!important;
+  padding-left:20px!important;
+  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) - 1px)!important;
 }
 
 /*current hovering channel*/
@@ -702,13 +707,13 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 }
 
 .root_bfe55a {
-  background:var(--background-base-lowest);
+  background:var(--background-base-lowest)!important;
 }
 
 
 /*ring x to general dms popup*/
 .a53846f6e9583cbd-chatHeaderBar{
-  border-bottom:1px solid var(--cursedcord-border);
+  border-bottom:1px solid var(--cursedcord-border)!important;
 }
 /*ring x to general container*/
 .a53846f6e9583cbd-chatHeaderBar:after {
@@ -731,11 +736,11 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 
 ._740174f3d6a2c8fe-scrollableContainer,
 ._740174f3d6a2c8fe-themedBackground{
-  border-radius: 0px;
+  border-radius: 0px!important;
 }
 
 ._5e434347c823b592-container{
-  --custom-chat-input-margin-bottom:none;
+  --custom-chat-input-margin-bottom:none!important;
 }
 
 /*remove border off message box */
@@ -746,7 +751,7 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 /*person is typing ... message at the bottom of screen. removed becasue i couldnt fix it and it looks kinda ugly*/
 .chatGradient__36d07,
 .chatGradientBase__36d07 {
-  display:none;
+  display:none!important;
 }
 
 
@@ -756,8 +761,8 @@ foreignObject[x="0"][width="20"][height="20"][mask]{
 
 /*removing rounded edges and adding border to user pfp */
 .c19a557985eb7793-avatar {
-  border-radius: 0px;
-  background-color: var(--cursedcord-primary-color);
+  border-radius: 0px!important;
+  background-color: var(--cursedcord-primary-color)!important;
 }
 
 /* remove circle mask from user pfp in settings*/
@@ -778,7 +783,7 @@ foreignObject[width="32"][height="32"]{
 
 /* removes inbox from top bar */
 .clickable_c99c29{
-  display:none;
+  display:none!important;
 }
 
 /*removes help from top bar */
@@ -788,12 +793,12 @@ foreignObject[width="32"][height="32"]{
 
 /* oops i forgot */
 ._4bbc6dc06e75ad52-videoContainer {
-  display:none;
+  display:none!important;
 }
 
 /*removing quests from dms list */
 .wrapper__553bf{
-  display: var(--cursedcord-questtoggle);
+  display: var(--cursedcord-questtoggle)!important;
 }
 
 
@@ -823,20 +828,20 @@ foreignObject[width="32"][height="32"]{
 .container_a1d343,
 .colorThemesBackground_fbfab6,
 [data-nav-anchor-key="appearance_icon_category"] {
-    display:none;
+    display:none!important;
 }
 .inner_c0bea0
 {
-  border-left:1px solid var(--cursedcord-border);
+  border-left:1px solid var(--cursedcord-border)!important;
 }
 
 .upsellRibbonContainer_a55fdc {
-  display:none;
+  display:none!important;
 }
 
 /*removes nitro banner bg*/
 .container__4bbc6{
-  display: var(--cursedcord-decorations);
+  display: var(--cursedcord-decorations)!important;
 }
 
 /* removes avatar decoration */
@@ -844,17 +849,17 @@ foreignObject[width="32"][height="32"]{
 .c19a557985eb7793-avatarDecoration,
 [class*="avatarDecoration"],
 [class*="profileEffects"] {
-  display: var(--cursedcord-decorations);
+  display: var(--cursedcord-decorations)!important;
 }
 
 /* gets rid of nameplate backgrounds */
 ._4bbc6dc06e75ad52-container{
-  display: var(--cursedcord-decorations);
+  display: var(--cursedcord-decorations)!important;
 }
 
 /*profile popout background*/
 [class*="backgroundImage"]{
-  display:none;
+  display:none!important;
   background-image: none!important;
     background-image: none!important;
   background-color: var(--cursedcord-bg1)!important;
@@ -871,21 +876,21 @@ foreignObject[width="32"][height="32"]{
 
 /*profile background startup animation */
 ._0137000bc80ab6ea-inner{
-  display: var(--cursedcord-decorations);
+  display: var(--cursedcord-decorations)!important;
 }
 
 /* removes profile border animation */
 ._4bbc6dc06e75ad52-videoContainer {
-  display: var(--cursedcord-decorations);
+  display: var(--cursedcord-decorations)!important;
 }
 
 
 /*remobing nitro and shop from dms list */
 li:has(a[data-list-item-id$="___nitro"]){
-  display: var(--cursedcord-nitrotoggle);
+  display: var(--cursedcord-nitrotoggle)!important;
 }
 a[data-list-item-id$="___shop"] {
-  display: var(--cursedcord-shoptoggle);
+  display: var(--cursedcord-shoptoggle)!important;
 }
 
 /* ------------------------------------------------------- CHAT MESSAGE BAR -----------------------------------------*/
@@ -895,12 +900,12 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 }
 /*remove sticker button from message box*/
 .stickerButton__74017{
-  display: var(--cursedcord-stickerbutton);
+  display: var(--cursedcord-stickerbutton)!important;
 }
 
 /*remove app launcher button from message box*/
 .buttonContainer_e6e74f{
-  display: var(--cursedcord-appbutton);
+  display: var(--cursedcord-appbutton)!important;
 }
 
 
@@ -908,12 +913,12 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 
 /* view full profile button bottom right of user popout menu */
 .footer__7f9c0 {
-  border-color: var(--cursedcord-border);
+  border-color: var(--cursedcord-border)!important;
   
 }
 
 .footerButton__7f9c0 {
-  height: 56px;
+  height: 56px!important;
 }
 /*bg of "message user" in pfp popout*/
 .container_a99829{
@@ -924,7 +929,7 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 ._9293f6b2fc12398a-container,
 ._7641b507c6cdbb10-container{
   outline: solid var(--cursedcord-border) thin !important;
-  border-start-start-radius: 0px;
+  border-start-start-radius: 0px!important;
   border-radius: 0px!important;
 }
 
@@ -939,16 +944,16 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 ._37e49614b9f110a9-containerRtcOpened{
   border:none!important;
   outline: solid var(--cursedcord-border) thin !important;
-  border-radius: 0px;
+  border-radius: 0px!important;
 }
 
 .e6b7699ce8339e1c-searchBar{
-  height:49px;
+  height:49px!important;
 }
 
 /*voice connected bottom left container */
 .e131a99484292a19-container{
-  border-radius: 0px;
+  border-radius: 0px!important;
 }
 
 ._5126c0cd07f243a0-buttons,
@@ -998,19 +1003,19 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 ._5dec784a68542d60-panel,
 ._5e434347c823b592-activityPanel,
 .e131a99484292a19-wrapper {
-  border-radius: 0px;
+  border-radius: 0px!important;
   border: 0px!important;
   border-top: 1px solid var(--cursedcord-border) !important;
-  overflow: visible;
+  overflow: visible!important;
 }
 
 /*controls bottom left panels */
 .panels__5e434 {
-  border-radius: 0px;
-  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + var(--custom-guild-list-width) + 2px);
-  left:-1%;
+  border-radius: 0px!important;
+  width:calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + var(--custom-guild-list-width) + 2px)!important;
+  left:-1%!important;
 
-  bottom:0px;
+  bottom:0px!important;
   border:none!important;
   border-top: 1px solid var(--cursedcord-border) !important;
 }
@@ -1025,11 +1030,11 @@ svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(
 
 /*Getting rid of bounding box for user status indicator */
 ._44b0c28be7879b7b-svg {
-  contain:none;
+  contain:none!important;
 }
 .outer_ab8609:after,
 .outer_ab8609:before{
-  display:none;
+  display:none!important;
 }
 
 /*porfile popup bg
@@ -1060,70 +1065,70 @@ mask circle[r="46"] {
 
 
 .mask_a423bd {
-  display: none;
+  display: none!important;
 }
 
 rect[fill="black"][height="36"][width="28"]{
-  display:none; 
+  display:none!important; 
 }
 rect[fill="white"][height="36"][width="28"]{
-  display:none; 
+  display:none!important; 
 }
 /*move position of online / dnd/ away circle*/
 g rect[width="16"][height="16"][x="60"] {
   mask:none!important;
-    width: 24px;
-    height:24px;
+    width: 24px!important;
+    height:24px!important;
 }
 
 ._44b0c28be7879b7b-pointerEvents{
-  border:none;
-  outline:none;
+  border:none!important;
+  outline:none!important;
 }
 
 g rect[width="16"][height="24"][x="60"]{
       mask:none!important;
-    width: 24px;
-    height:24px;
-    transform:translate(0px,8px);
+    width: 24px!important;
+    height:24px!important;
+    transform:translate(0px,8px)!important;
 }
 
 svg[width="40"][height="24"][viewbox="0 0 40 24"]{
-    transform:translate(12px, 8px);
+    transform:translate(12px, 8px)!important;
 }
 
 g rect[width="12"][height="12"][x="28"][mask][class]{
-  mask:none;
-  transform: translate(-16px,-16px) scale(1.4,1.4);
+  mask:none!important;
+  transform: translate(-16px,-16px) scale(1.4,1.4)!important;
 }
 
 g rect[width="12"][height="18"][x="28"][y="22"][mask][class]{
-  mask:none;
-  transform:translate(2px,2px) scale(0.97,0.97);
+  mask:none!important;
+  transform:translate(2px,2px) scale(0.97,0.97)!important;
 }
 /*removing masks off status indicators */
 svg[width="25"][height="15"] [id] {
-  display:none;
+  display:none!important;
 }
 
 rect[width="25"][height="15"] {
-    height:15px;
-    width: 15px;
-    transform: translate(3px, 1px);
+    height:15px!important;
+    width: 15px!important;
+    transform: translate(3px, 1px)!important;
 }
 rect[width="40"][height="24"][mask] {
-  mask:none;
+  mask:none!important;
 }
 
 g rect[width="10"][height="10"][x="22"][mask] {
-    height:15px;
-    width: 15px;
-    transform: translate(-5px, -5px);
-  mask:none;
+    height:15px!important;
+    width: 15px!important;
+    transform: translate(-5px, -5px)!important;
+  mask:none!important;
 }
 rect[width="10"][height="15"][x="22"][y="17"] {
   stroke-width: 0px!important;
-  transform: translate(-5px, 0px);
+  transform: translate(-5px, 0px)!important;
 }
 circle[fill="black"][cx="68"],
 circle[fill="white"][cx="68"],
@@ -1140,66 +1145,66 @@ circle[fill="white"][r="20"][cy="100"]{
 
 
 rect[width="10"][height="15"][x="22"] {
-    height:15px;
-    width: 15px;
+    height:15px!important;
+    width: 15px!important;
   mask:none!important;
 }
 
 g rect[width="24"][height="24"][x="88"][y="88"][mask][class]{
-  mask:none;
-  transform: translate(12px,12px);
+  mask:none!important;
+  transform: translate(12px,12px)!important;
 }
 
 ._44b0c28be7879b7b-cursorDefault{
     mask-image: url("https://i.postimg.cc/QMmGCkHZ/right-triangle-for-status-indicator.png")
 }
 ._44b0c28be7879b7b-wrapper g rect[width="10"][height="10"][x="22"][fill="transparent"] {
-    transform: translate(-20px, -20px);
+    transform: translate(-20px, -20px)!important;
 }
 
 /*triangle mask for some status indicators*/
 .mask__44b0c g{
-    mask-image: url("https://i.postimg.cc/QMmGCkHZ/right-triangle-for-status-indicator.png");
-    mask-repeat: no-repeat;
+    mask-image: url("https://i.postimg.cc/QMmGCkHZ/right-triangle-for-status-indicator.png")!important;
+    mask-repeat: no-repeat!important;
 }
 
 /*unrounds mask for pfpf*/
 foreignObject[x="0"][width="80"]{
-  mask:none;
-  left:-100px;
+  mask:none!important;
+  left:-100px!important;
 }
 
 foreignObject[x="0"][width="120"][mask]{
-  mask:none;
+  mask:none!important;
 }
 
 ._44b0c28be7879b7b-wrapper {
-  border-radius: 0px;
+  border-radius: 0px!important;
 }
 
 ._44b0c28be7879b7b-svg foreignObject[x="0"][width="120"][mask]{
-  mask:none;
+  mask:none!important;
 }
 
 /*------------------------------------------*/
 
 .aa8da23faa27393c-top{
-  padding-left: 20px;
+  padding-left: 20px!important;
 }
 
 ._9c3bea41fd465666-profileBody {
-  padding-left:10px;
+  padding-left:10px!important;
 }
 
 .f37cb1984c371ee5-name {
-  padding-right:30px;
+  padding-right:30px!important;
 }
 
 /*removing folder rounded edges*/
 .cc5dd25190031396-svg mask,
 .cc5dd25190031396-svg path[d="M0 24C0 16.5449 0 12.8174 1.21793 9.87706C2.84183 5.95662 5.95662 2.84183 9.87706 1.21793C12.8174 0 16.5449 0 24 0C31.4551 0 35.1826 0 38.1229 1.21793C42.0434 2.84183 45.1582 5.95662 46.7821 9.87706C48 12.8174 48 16.5449 48 24C48 31.4551 48 35.1826 46.7821 38.1229C45.1582 42.0434 42.0434 45.1582 38.1229 46.7821C35.1826 48 31.4551 48 24 48C16.5449 48 12.8174 48 9.87706 46.7821C5.95662 45.1582 2.84183 42.0434 1.21793 38.1229C0 35.1826 0 31.4551 0 24Z"]{
-  mask:none;
-  display:none;
+  mask:none!important;
+  display:none!important;
 }
 
 /*removing rounded corners from servers in folder preview*/
@@ -1218,7 +1223,7 @@ foreignObject[x="0"][width="120"][mask]{
 /*changes "new" status on the top of the servers list when you have notifs above where you need to scroll*/
 ._3b95d7d910416e54-active{
   border-radius: 0 !important;
-  border: 1px solid var(--cursedcord-border);
+  border: 1px solid var(--cursedcord-border)!important;
   overflow: visible !important;
   clip-path: none !important;
   mask: none !important;
@@ -1226,34 +1231,34 @@ foreignObject[x="0"][width="120"][mask]{
 }
 
 ._629e4c86564a4ee7-unreadBottom {
-  bottom: calc(var(--custom-app-panels-height, 0) + var(--space-0));
+  bottom: calc(var(--custom-app-panels-height, 0) + var(--space-0))!important;
 }
 
 .unreadMentionsIndicatorTop_ef3116{
-  border:none;
+  border:none!important;
 }
 
 /*flips bottom "new" notif indicator and repositions slightly*/
 .ef3116c2da186559-unreadMentionsIndicatorBottom{
-  margin-bottom:8px;
+  margin-bottom:8px!important;
 }
 
 /* controls new unreads notif on server channel messages column*/
 ._7aaec78b97ff00f7-top {
-  top:-1px;
+  top:-1px!important;
 }
 
 ._7aaec78b97ff00f7-bottom {
-  bottom:calc(var(--custom-app-panels-height, 0) - 10px);
+  bottom:calc(var(--custom-app-panels-height, 0) - 10px)!important;
 }
 
 ._7aaec78b97ff00f7-bar{
-  background-color: var(--cursedcord-indicatorcolor);
+  background-color: var(--cursedcord-indicatorcolor)!important;
 }
 ._7aaec78b97ff00f7-barText,
 .cf48127484dbde85-text-xs{ /*this text-xs might change other elements*/
   color: var(--cursedcord-indicatorcolor)!important;
-  filter:invert(1);
+  filter:invert(1)!important;
 }
 
 /*remove padding off new notif indicators*/
