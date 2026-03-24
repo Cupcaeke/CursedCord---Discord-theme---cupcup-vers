@@ -8,8 +8,8 @@
 :root,
 .theme-dark, .theme-light { 
   
-  /*role colors - uncomment to show, keep commmented out to hide*/
-  /* --cursedcord-server-role-colors:unset; CURRENTLY BROKEN*/
+   /*role colors - uncomment to show, keep commmented out to hide*/
+  /* --cursedcord-server-role-colors:unset!important; CURRENTLY BROKEN*/
 
 
   /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
@@ -21,9 +21,9 @@
 
   --control-primary-background-default:color-mix(in oklab, var(--cursedcord-bg1)100%, var(--cursedcord-bg1) 80%)!important;
 
-  --message-background-hover:var(--cursedcord-hover-color);
-  --interactive-background-hover:var(--cursedcord-hover-color); /*mabbe keep these uneditable - selection hover colors */
-  --interactive-background-selected:var(--cursedcord-hover-color);
+  --message-background-hover:var(--cursedcord-hover-color)!important;
+  --interactive-background-hover:var(--cursedcord-hover-color)!important; /*mabbe keep these uneditable - selection hover colors */
+  --interactive-background-selected:var(--cursedcord-hover-color)!important;
   --control-secondary-background-hover:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 40%)!important;
   --control-secondary-background-active:color-mix(in oklab, var(--cursedcord-hover-color), var(--cursedcord-bg1) 40%)!important; /*adding black and white here for?? */
 
@@ -54,32 +54,32 @@
 
 
 
-  --badge-notification-background: var(--cursedcord-notifcolor);
+  --badge-notification-background: var(--cursedcord-notifcolor)!important;
 
 
 
-  --watermark-filter-invert: 0%;
-  --watermark-filter-sepia: 50%;
-  --watermark-filter-saturate: 3000%;
-  --watermark-filter-hue-rotate: 210deg;
-  --watermark-filter-brightness: 70%;
-  --watermark-filter-contrast: 200%;
+  --watermark-filter-invert: 0%!important;
+  --watermark-filter-sepia: 50%!important;
+  --watermark-filter-saturate: 3000%!important;
+  --watermark-filter-hue-rotate: 210deg!important;
+  --watermark-filter-brightness: 70%!important;
+  --watermark-filter-contrast: 200%!important;
 
 
 
   /*change message mentioned bg when right clicked */
-  --message-mentioned-background-hover:var(--cursedcord-primary-color-highlight-hover);
+  --message-mentioned-background-hover:var(--cursedcord-primary-color-highlight-hover)!important;
 
   /*Remove rounded edges on EVERYTHING*/
-  --radius-none: 0px; 
-  --radius-xs: 0px; 
-  --radius-sm: 0px; 
-  --radius-md: 0px; 
-  --radius-lg: 0px; 
-  --radius-xl: 0px; 
-  --radius-xxl: 0px; 
-  --radius-round: 0px;
-  --custom-base-tile-border-radius:0px;
+  --radius-none: 0px!important; 
+  --radius-xs: 0px!important; 
+  --radius-sm: 0px!important; 
+  --radius-md: 0px!important; 
+  --radius-lg: 0px!important; 
+  --radius-xl: 0px!important; 
+  --radius-xxl: 0px!important; 
+  --radius-round: 0px!important;
+  --custom-base-tile-border-radius:0px!important;
   
 
   --custom-user-profile-theme-padding: 0px!important;
@@ -87,7 +87,7 @@
   /*changing colors of sliders and buttons*/
   /*primary bg should be all primary color*/
   /*bg brand should be primary color*/
-  --badge-background-brand:var(--cursedcord-primary-color);
+  --badge-background-brand:var(--cursedcord-primary-color)!important;
 
   --bd-brand: var(--cursedcord-primary-color)!important;
   --bd-brand-hover: var(--cursedcord-hover-color)!important;
@@ -145,36 +145,36 @@
  /* end -------------------------------------------------------*/
 
   /*these 2 change color of all links / link icons */
-  --text-link:var(--cursedcord-linkcolor);
-  --icon-link:var(--cursedcord-linkcolor); /*maybve give these 2 seperate colorings? in base discord they were slightly darker than the normal blue */
-  --text-brand: var(--cursedcord-primary-color);
+  --text-link:var(--cursedcord-linkcolor)!important;
+  --icon-link:var(--cursedcord-linkcolor)!important; /*maybve give these 2 seperate colorings? in base discord they were slightly darker than the normal blue */
+  --text-brand: var(--cursedcord-primary-color)!important;
   
   
 
 
-  --background-feedback-notification: var(--cursedcord-notifcolor); 
-  --text-overlay-light: rgb(0, 0, 0);/* controls text color on notifs i think */
+  --background-feedback-notification: var(--cursedcord-notifcolor)!important; 
+  --text-overlay-light: rgb(0, 0, 0)!important;/* controls text color on notifs i think */
   /* controls color of when "NEW" notification is pressed*/
-  --red-430: var(--cursedcord-notifcolor); 
+  --red-430: var(--cursedcord-notifcolor)!important; 
 
   /* change border color */
-  --border-feedback-critical: var(--cursedcord-border);
-  --border-focus:  var(--cursedcord-border);
-  --border-muted:  var(--cursedcord-border);
-  --border-normal:  var(--cursedcord-border);
-  --border-strong:  var(--cursedcord-border);
-  --border-subtle: var(--cursedcord-border);
-  --app-frame-border: var(--cursedcord-border);
+  --border-feedback-critical: var(--cursedcord-border)!important;
+  --border-focus:  var(--cursedcord-border)!important;
+  --border-muted:  var(--cursedcord-border)!important;
+  --border-normal:  var(--cursedcord-border)!important;
+  --border-strong:  var(--cursedcord-border)!important;
+  --border-subtle: var(--cursedcord-border)!important;
+  --app-frame-border: var(--cursedcord-border)!important;
 
   /*changing text colors - organized in order of brightest to darkest based on discords default coloring*/
-  --control-primary-text-default:var(--cursedcord-primary-text-color); 
-  /*--control-secondary-text-hover: var(--cursedcord-secondary-text-color)!important;
-  --interactive-text-hover: var(--cursedcord-secondary-text-color)!important; deciding on these. not sure of a good way to easily control them and still have them not clash with other colors*/
+  --control-primary-text-default:var(--cursedcord-primary-text-color)!important; 
+  /*--control-secondary-text-hover: var(--cursedcord-secondary-text-color)!important!important;
+  --interactive-text-hover: var(--cursedcord-secondary-text-color)!important!important; deciding on these. not sure of a good way to easily control them and still have them not clash with other colors*/
 
-  --text-strong:var(--cursedcord-primary-text-color); 
-  --text-default:var(--cursedcord-primary-text-color);
-  --control-secondary-text-default:var(--cursedcord-primary-text-color);
-  --white:var(--cursedcord-primary-text-color);
+  --text-strong:var(--cursedcord-primary-text-color)!important; 
+  --text-default:var(--cursedcord-primary-text-color)!important;
+  --control-secondary-text-default:var(--cursedcord-primary-text-color)!important;
+  --white:var(--cursedcord-primary-text-color)!important;
   /*--interactive-text-active:color-mix(in oklab, var(--text-strong) 100%, white 50%)!important; /*leave white or cahnge?*/ 
   --interactive-text-default: color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color)70%)!important;
   --channel-text-area-placeholder:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
@@ -185,7 +185,7 @@
   --input-placeholder-text-default:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
   --chat-text-muted:color-mix(in oklab, var(--text-strong) 70%, var(--cursedcord-secondary-text-color) 100%)!important;
 
-  --icon-strong:var(--cursedcord-primary-text-color); 
+  --icon-strong:var(--cursedcord-primary-text-color)!important; 
   --icon-subtle:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 90%)!important;
   --icon-muted:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 50%)!important;
 
@@ -195,8 +195,6 @@
 
 
   /*MENTIONS MESSAGE COLOR*/
-
-
 
 
 
