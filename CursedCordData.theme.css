@@ -904,7 +904,10 @@ a[data-list-item-id$="___shop"] {
 .buttonContainer_e6e74f{
   display: var(--cursedcord-appbutton)!important;
 }
-
+/*making sticker button align properly. no idea what broke it*/
+.buttonContainer__74017 {
+  display:block!important;
+}
 
 /* ----------------------------------------------------------------------------------*/
 
