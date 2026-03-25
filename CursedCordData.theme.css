@@ -892,7 +892,7 @@ a[data-list-item-id$="___shop"] {
 
 /* ------------------------------------------------------- CHAT MESSAGE BAR -----------------------------------------*/
 /*removing nitro gift from message box -- BROKEN -- NEED TO FIX*/
-svg[viewBox="0 0 24 24"][style="width: 100%;height: 100%;transform: translate3d(0px, 0px, 0px);content-visibility: visible;"] {
+.button__74017[aria-label="Give a Gift"] {
   display:var(--cursedcord-nitrotoggle)!important;
 }
 /*remove sticker button from message box*/
