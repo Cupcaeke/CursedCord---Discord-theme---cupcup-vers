@@ -891,8 +891,12 @@ a[data-list-item-id$="___shop"] {
 }
 
 /* ------------------------------------------------------- CHAT MESSAGE BAR -----------------------------------------*/
-/*removing nitro gift from message box -- BROKEN -- NEED TO FIX*/
+/*removing nitro gift from message box -- Give a Gift is for dms*/
 .button__74017[aria-label="Give a Gift"] {
+  display:var(--cursedcord-nitrotoggle)!important;
+}
+/*Send a gift is for servers*/
+.button__74017[aria-label="Send a gift"] {
   display:var(--cursedcord-nitrotoggle)!important;
 }
 /*remove sticker button from message box*/
