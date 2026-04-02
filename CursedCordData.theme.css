@@ -1,18 +1,32 @@
-/**
- * @name CursedCord
- * @author CursedElectric
- * @description A sharp theme that removes nitro features and buttons, and rounded edges, and adds lots of color customization
- * @version 1.0
- */
-
 :root,
 .theme-dark, .theme-light { 
   
    /*role colors - uncomment to show, keep commmented out to hide*/
   /* --cursedcord-server-role-colors:unset!important; CURRENTLY BROKEN*/
+  /*ALL TOGGLES - leave var blank to show, and "none" to hide*/
+
+  /*server tags*/
+  --cursedcord-guildtags: none!important;  
+
+  /* NITRO TOGGLES */
+  /* name, pfp background, avatar banners etc */
+  --cursedcord-decorations:none!important;  
+  /*shop button */
+  --cursedcord-shoptoggle:none!important;
+  /*quests button */
+  --cursedcord-questtoggle:none!important;
+  /*nitro + gift button */
+  --cursedcord-nitrotoggle:none!important;
+  /*app launcher on message bar*/
+  --cursedcord-appbutton:none!important;
+  /*sticker button on message bar*/
+  --cursedcord-stickerbutton:none!important;
+  
+  /*role colors - uncomment to show, keep commmented out to hide*/
+  /* --cursedcord-server-role-colors:unset!important; CURRENTLY BROKEN*/
 
 
-   /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
+  /*MAKE THESE SPECIFIC TO LIGHT OR DARK MODE! --- these should be derivitve of primary color maybe*/
   /*rebalance colors idk how yet -- these are hovering colors. mix with black or white depending on theme?*/
   --background-mod-muted:color-mix(in oklab, var(--cursedcord-hover-color)10%, var(--cursedcord-bg1) 10%)!important;
   --background-mod-subtle:color-mix(in oklab, var(--cursedcord-hover-color) 20%, var(--cursedcord-hover-color) 20%)!important;
@@ -33,7 +47,7 @@
   /*colors for mentions messages */
   --icon-feedback-warning:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 0%)!important;
   --message-mentioned-background-default:color-mix(in oklab, var(--cursedcord-mention-color)20%, rgb(0,0,0,0) 0%)!important;
-  --message-mentioned-background-hover:color-mix(in oklab, var(--cursedcord-mention-color)60%, rgb(0,0,0,0) 0%)!important;
+  --message-mentioned-background-hover:color-mix(in oklab, var(--cursedcord-mention-color)40%, rgb(0,0,0,0) 0%)!important;
   --mention-background:color-mix(in oklab, var(--cursedcord-linkcolor)30%, rgb(0,0,0,0) 0%)!important;
   --mention-foreground:color-mix(in oklab, var(--cursedcord-linkcolor)100%, rgb(0,0,0,0) 0%)!important;
 
@@ -41,15 +55,17 @@
 
 
   /*colors for reply messages */
-  --brand-500:var(--cursedcord-mention-color)!important;
+  /*i think brand 500 should be primary color. since primary is replacing most things colored blue*/
+  --brand-500:var(--cursedcord-primary-color)!important;
   --message-highlight-background-default:color-mix(in oklab, var(--cursedcord-mention-color)20%, rgb(0,0,0,0) 0%)!important; /*for reply message coloring*/
   --brand-10a:color-mix(in oklab, var(--cursedcord-mention-color)60%, rgb(0,0,0,0) 0%)!important;
 
   /*the color of the box on emoji replies */
   --brand-160:color-mix(in oklab, var(--cursedcord-primary-color)100%, rgb(0,0,0,0) 50%)!important;
   /*color of box in emoji replies that youve already reacted to*/
-  --reaction-border-reacted-default:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 0%)!important;
-  --reaction-background-reacted-default:color-mix(in oklab, var(--cursedcord-mention-color)100%, rgb(0,0,0,0) 50%)!important;
+  --reaction-border-reacted-default:color-mix(in oklab, var(--border-focus)100%, var(--cursedcord-primary-color) 100%)!important;
+  --reaction-background-reacted-default:var(--cursedcord-primary-color)!important;
+  --reaction-text-reacted-default:var(--text-default)!important;
 
 
 
@@ -65,10 +81,6 @@
   --watermark-filter-brightness: 70%!important;
   --watermark-filter-contrast: 200%!important;
 
-
-
-  /*change message mentioned bg when right clicked */
-  --message-mentioned-background-hover:var(--cursedcord-primary-color-highlight-hover)!important;
 
   /*Remove rounded edges on EVERYTHING*/
   --radius-none: 0px!important; 
@@ -193,14 +205,6 @@
   
   --neutral-9:color-mix(in oklab, var(--text-strong) 100%, var(--cursedcord-secondary-text-color) 70%)!important;
 
-
-  /*MENTIONS MESSAGE COLOR*/
-
-
-
-
-
-
 }
 *,
 *:before,
@@ -232,12 +236,6 @@
  -add hover color to server name !!! server name does not have hover color by default. this is hard to fix
 */
 
-
-/*controls server role colors*/
-.nameContainer__703b9 {
-  /* all:var(--cursedcord-server-role-colors); /*this bullshit doesnt work. angry */
-  color:var(--cursedcord-primary-text-color)!important;
-}
 
 /*removing borders from pfp at the top where name is in dms*/
 ._44b0c28be7879b7b-mask foreignObject,
@@ -355,7 +353,6 @@
 .sidebarList__5e434 {
   border-top:none!important;
   border-left:none!important;
-  border-right:none!important
 }
 /* controls friends tab + freinds list + active now*/
 .container__133bf {
@@ -801,21 +798,6 @@ foreignObject[width="32"][height="32"]{
 
 /*--------------------------------------------------nitro features---------------------------------------*/
 
-/*removes all nitro user name effects*/
-[class*="dfb"]:before,
-[class*="dfb"]
-{
-  all: unset!important;
-}
-
-
-/*removing custom fonts */
-[class*="zillaSlab"]
- {
-  font-family:inherit!important;
-  letter-spacing: inherit!important;
-}
-
 /*removing guild tags */
 .chipletContainerInner__10651,.chipletContainerInline__10651, .clanTag__972a0{
   display:var(--cursedcord-guildtags)!important;
@@ -837,7 +819,8 @@ foreignObject[width="32"][height="32"]{
 }
 
 /*removes nitro banner bg*/
-.container__4bbc6{
+.container__4bbc6, /*may be deprecated */
+.container_df39b2{
   display: var(--cursedcord-decorations)!important;
 }
 
@@ -891,7 +874,7 @@ a[data-list-item-id$="___shop"] {
 }
 
 /* ------------------------------------------------------- CHAT MESSAGE BAR -----------------------------------------*/
-/*removing nitro gift from message box -- Give a Gift is for dms*/
+/*removing nitro gift from message box -- Give a gift is for dms*/
 .button__74017[aria-label="Give a Gift"] {
   display:var(--cursedcord-nitrotoggle)!important;
 }
@@ -908,11 +891,11 @@ a[data-list-item-id$="___shop"] {
 .buttonContainer_e6e74f{
   display: var(--cursedcord-appbutton)!important;
 }
+
 /*making sticker button align properly. no idea what broke it*/
 .buttonContainer__74017 {
   display:block!important;
 }
-
 /* ----------------------------------------------------------------------------------*/
 
 /* view full profile button bottom right of user popout menu */
@@ -1275,6 +1258,14 @@ foreignObject[x="0"][width="120"][mask]{
 /*swaps text on new notif indicator -- DEPRECATED I THINK*/
 ._3b95d7d910416e54-text {
   color:var(--cursedcord-notiftext)!important;
+}
+
+/*for "X new messages since x time on x date bar that drops down from the top of a channel*/
+.newMessagesBar__0f481{
+  border: none!important;
+  border-left: 1px solid var(--cursedcord-border)!important;
+  border-right: 1px solid var(--cursedcord-border)!important;
+  border-bottom: 1px solid var(--cursedcord-border)!important;
 }
 
 /*swaps text on new notif indicator*/
