@@ -10,17 +10,17 @@
 
   /* NITRO TOGGLES */
   /* name, pfp background, avatar banners etc */
-  --cursedcord-decorations:none!important;  
+  /*--cursedcord-decorations:none!important;  
   /*shop button */
-  --cursedcord-shoptoggle:none!important;
+  /*--cursedcord-shoptoggle:none!important;
   /*quests button */
   --cursedcord-questtoggle:none!important;
   /*nitro + gift button */
-  --cursedcord-nitrotoggle:none!important;
+  /*--cursedcord-nitrotoggle:none!important;
   /*app launcher on message bar*/
-  --cursedcord-appbutton:none!important;
+  /*--cursedcord-appbutton:none!important;
   /*sticker button on message bar*/
-  --cursedcord-stickerbutton:none!important;
+  /*--cursedcord-stickerbutton:none!important;
   
   /*role colors - uncomment to show, keep commmented out to hide*/
   /* --cursedcord-server-role-colors:unset!important; CURRENTLY BROKEN*/
@@ -83,18 +83,18 @@
 
 
   /*Remove rounded edges on EVERYTHING*/
-  --radius-none: 0px!important; 
-  --radius-xs: 0px!important; 
-  --radius-sm: 0px!important; 
-  --radius-md: 0px!important; 
-  --radius-lg: 0px!important; 
-  --radius-xl: 0px!important; 
-  --radius-xxl: 0px!important; 
-  --radius-round: 0px!important;
-  --custom-base-tile-border-radius:0px!important;
+  --radius-none: 5px!important; 
+  --radius-xs: 5px!important; 
+  --radius-sm: 5px!important; 
+  --radius-md: 5px!important; 
+  --radius-lg: 5px!important; 
+  --radius-xl: 5px!important; 
+  --radius-xxl: 5px!important; 
+  --radius-round: 5px!important;
+  --custom-base-tile-border-radius:5px!important;
   
 
-  --custom-user-profile-theme-padding: 0px!important;
+  --custom-user-profile-theme-padding: 5px!important;
 
   /*changing colors of sliders and buttons*/
   /*primary bg should be all primary color*/
