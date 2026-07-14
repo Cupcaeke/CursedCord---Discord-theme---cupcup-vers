@@ -83,7 +83,7 @@
 
 
   /*Remove rounded edges on EVERYTHING*/
-  --radius-none: 5px!important; 
+  /*--radius-none: 5px!important; 
   --radius-xs: 5px!important; 
   --radius-sm: 5px!important; 
   --radius-md: 5px!important; 
@@ -94,7 +94,7 @@
   --custom-base-tile-border-radius:5px!important;
   
 
-  --custom-user-profile-theme-padding: 5px!important;
+  --custom-user-profile-theme-padding: 5px!important;*/
 
   /*changing colors of sliders and buttons*/
   /*primary bg should be all primary color*/
